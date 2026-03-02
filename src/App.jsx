@@ -1,200 +1,297 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { useState } from "react";
-
-const theme = {
-  primary: "#a68dd8",
-  background: "#ffffff",
-  text: "#333333",
+const heroImages = {
+  main: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80",
+  secondary:
+    "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80",
 };
 
-const Button = ({ children, href }) => (
-  <Link
-    to={href}
-    className="px-6 py-3 rounded-2xl font-medium shadow-md hover:opacity-90"
-    style={{ backgroundColor: theme.primary, color: theme.background }}
-  >
-    {children}
-  </Link>
-);
-
-function Navbar() {
-  return (
-    <nav className="flex justify-between items-center p-6 shadow-sm sticky top-0 bg-white z-50">
-      <h1 className="text-2xl font-semibold" style={{ color: theme.primary }}>Rupinder Therapy</h1>
-      <div className="flex gap-6">
-        <Link to="/">Home</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/resources">Resources</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
-      </div>
-    </nav>
-  );
-}
-
-function Home() {
-  return (
-    <div className="text-center py-20 px-6 max-w-3xl mx-auto">
-      <h2 className="text-4xl font-bold mb-4">Healing is personal. Your journey deserves a space that honors it.</h2>
-      <p className="text-lg text-gray-700 mb-8">
-        Counseling, creativity, and calm—woven into one holistic experience.
-      </p>
-      <div className="flex justify-center gap-4 mb-16">
-        <Button href="/services">Start Your Healing Journey</Button>
-        <Button href="/resources">Explore Free Resources</Button>
-      </div>
-
-      <section className="mb-16">
-        <h3 className="text-2xl font-semibold mb-2">A Holistic Path to Mental Wellness</h3>
-        <p className="text-gray-700">
-          I blend evidence-based counseling (CBT, EMDR, mindfulness) with creative therapies like guided meditation, poetry, and visual journaling. Every offering is crafted to meet you where you are—with empathy, clarity, and care.
-        </p>
-      </section>
-
-      <section className="grid md:grid-cols-3 gap-8 mb-16">
-        {[
-          {
-            title: "Counseling Sessions",
-            desc: "One-on-one support tailored to your needs—online and confidential.",
-          },
-          {
-            title: "Guided Meditations",
-            desc: "Audio journeys to calm the mind and reconnect with your inner self.",
-          },
-          {
-            title: "Creative Healing Kits",
-            desc: "Downloadable poetry, journals, and visuals for reflection and growth.",
-          },
-        ].map((s) => (
-          <div key={s.title} className="p-6 rounded-2xl shadow-md bg-white border border-purple-100">
-            <h4 className="font-semibold mb-2 text-xl" style={{ color: theme.primary }}>{s.title}</h4>
-            <p className="text-gray-700">{s.desc}</p>
-          </div>
-        ))}
-      </section>
-
-      <section className="mb-16">
-        <blockquote className="italic text-lg text-gray-700">
-          “Rupinder’s approach helped me feel seen and supported in ways I never expected.”
-        </blockquote>
-        <p className="text-sm text-gray-500 mt-2">— Client, 2024</p>
-        <div className="flex justify-center gap-4 mt-4 text-gray-500 text-sm">
-          <span>🌿 Certified Counselor</span>
-          <span>🔒 Private & Confidential</span>
-          <span>💳 Secure Payments</span>
-        </div>
-      </section>
-
-      <section className="bg-purple-50 p-8 rounded-2xl">
-        <h4 className="text-xl font-semibold mb-2">Get a free guided meditation + journal kit when you subscribe.</h4>
-        <form className="flex flex-col md:flex-row gap-3 justify-center">
-          <input
-            type="email"
-            placeholder="Your email"
-            className="p-3 rounded-xl border border-gray-300 flex-1"
-          />
-          <Button href="#">Subscribe</Button>
-        </form>
-      </section>
-    </div>
-  );
-}
-
-function Services() {
-  return (
-    <div className="max-w-3xl mx-auto py-16 px-6">
-      <h2 className="text-3xl font-bold mb-6">Services</h2>
-      <p className="mb-6 text-gray-700">I offer evidence-based therapies with a creative, compassionate touch.</p>
-      <ul className="list-disc pl-6 space-y-2">
-        <li>CBT, EMDR, mindfulness, occupational therapy</li>
-        <li>Individual, couples, trauma-focused sessions</li>
-      </ul>
-      <div className="mt-8">
-        <Button href="/contact">Schedule a free 15-minute consult</Button>
-      </div>
-    </div>
-  );
-}
-
-function Resources() {
-  return (
-    <div className="max-w-3xl mx-auto py-16 px-6">
-      <h2 className="text-3xl font-bold mb-6">Resources</h2>
-      <h3 className="text-xl font-semibold mb-4">Free Downloads</h3>
-      <ul className="list-disc pl-6 space-y-2">
-        <li>Guided meditations (MP3)</li>
-        <li>Companion journals (PDF)</li>
-        <li>Poetry kits with restored visuals</li>
-      </ul>
-      <h3 className="text-xl font-semibold mt-8 mb-4">Premium Bundles</h3>
-      <ul className="list-disc pl-6 space-y-2">
-        <li>Healing kits with audio + journal + poetry</li>
-      </ul>
-      <p className="text-gray-700 mt-4">Checkout securely via Easy Digital Downloads.</p>
-    </div>
-  );
-}
-
-function About() {
-  return (
-    <div className="max-w-3xl mx-auto py-16 px-6">
-      <h2 className="text-3xl font-bold mb-6">About Rupinder</h2>
-      <p className="text-gray-700 mb-6">
-        My journey into therapy began with a belief: that healing thrives when compassion meets creativity. With training in CBT, EMDR, and mindfulness, I integrate evidence-based counseling with expressive arts, helping clients find their unique path to peace.
-      </p>
-      <h3 className="text-xl font-semibold mb-2">Values</h3>
-      <ul className="list-disc pl-6 text-gray-700">
-        <li>Empathy</li>
-        <li>Authenticity</li>
-        <li>Accessibility</li>
-        <li>Growth</li>
-      </ul>
-    </div>
-  );
-}
-
-function Contact() {
-  return (
-    <div className="max-w-3xl mx-auto py-16 px-6">
-      <h2 className="text-3xl font-bold mb-6">Contact</h2>
-      <p className="text-gray-700 mb-6">Reach out. I’d love to hear from you.</p>
-      <form className="flex flex-col gap-4">
-        <input type="text" placeholder="Name" className="p-3 border rounded-xl" />
-        <input type="email" placeholder="Email" className="p-3 border rounded-xl" />
-        <textarea placeholder="Message" className="p-3 border rounded-xl" rows="5"></textarea>
-        <Button href="#">Send Message</Button>
-      </form>
-    </div>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="mt-20 py-10 text-center border-t text-gray-500 text-sm">
-      <div className="flex justify-center gap-4 mb-3">
-        <Link to="/services">Services</Link>
-        <Link to="/resources">Resources</Link>
-        <Link to="/contact">Contact</Link>
-        <Link to="/privacy">Privacy</Link>
-      </div>
-      <p>“Healing is not linear—but it is always possible.”</p>
-      <p className="mt-2">© {new Date().getFullYear()} Rupinder Therapy</p>
-    </footer>
-  );
-}
+const calmingImages = [
+  "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
+  "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=80",
+  "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80",
+];
 
 export default function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/resources" element={<Resources />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <div className="site">
+      <header className="hero">
+        <nav className="nav">
+          <div className="brand">
+            <span className="brand-mark">A</span>
+            <div>
+              <p className="brand-name">Aurora Bloom Therapy Studio</p>
+              <p className="brand-tag">Calm minds. Brave hearts. Better days.</p>
+            </div>
+          </div>
+          <div className="nav-links">
+            <a href="#services">Services</a>
+            <a href="#expertise">Expertise</a>
+            <a href="#testimonials">Stories</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+
+        <div className="hero-grid">
+          <div className="hero-copy">
+            <p className="eyebrow">Internationally Accredited Hypnotherapist</p>
+            <h1>
+              A therapeutic space that feels like a deep breath and a fresh start.
+            </h1>
+            <p className="lead">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris.
+            </p>
+            <div className="cta-row">
+              <button className="cta primary">Book Now</button>
+              <button className="cta ghost">Call</button>
+              <button className="cta ghost">Message</button>
+            </div>
+            <div className="stats">
+              <div>
+                <h3>7+ Years</h3>
+                <p>Experience in therapeutic care</p>
+              </div>
+              <div>
+                <h3>Holistic Focus</h3>
+                <p>Mind, body, and emotional balance</p>
+              </div>
+              <div>
+                <h3>Adolescence Care</h3>
+                <p>Test anxiety, peer pressure, anger</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="hero-images">
+            <div className="image-card">
+              <img src={heroImages.main} alt="Therapist in a calm studio" />
+              <div className="image-caption">Safe, welcoming, and grounded.</div>
+            </div>
+            <div className="image-card small">
+              <img src={heroImages.secondary} alt="Supportive conversation" />
+              <div className="image-caption">Every session meets you where you are.</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section className="cta-strip">
+        <div className="cta-card">
+          <h4>Free 15-min Chat</h4>
+          <p>See if we are the right fit.</p>
+        </div>
+        <div className="cta-card">
+          <h4>Evening Slots</h4>
+          <p>Flexible scheduling that fits life.</p>
+        </div>
+        <div className="cta-card">
+          <h4>Confidential Care</h4>
+          <p>Private, respectful, secure.</p>
+        </div>
+      </section>
+
+      <section id="services" className="section">
+        <div className="section-header">
+          <h2>Services</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            feugiat mauris sed lacus finibus, a pellentesque massa mattis.
+          </p>
+        </div>
+        <div className="services-grid">
+          <article className="service-card">
+            <h3>Psychological Counselling</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore.
+            </p>
+            <ul>
+              <li>Anxiety & depression support</li>
+              <li>Relationship & family dynamics</li>
+              <li>Stress, grief, and life transitions</li>
+            </ul>
+          </article>
+          <article className="service-card">
+            <h3>Therapy</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore.
+            </p>
+            <ul>
+              <li>Trauma-informed therapy</li>
+              <li>Emotion regulation & resilience</li>
+              <li>Personal growth & self-esteem</li>
+            </ul>
+          </article>
+          <article className="service-card">
+            <h3>Others</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore.
+            </p>
+            <ul>
+              <li>Guided meditation & mindfulness</li>
+              <li>Heartfulness & journaling</li>
+              <li>Music & simple yoga for relaxation</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="expertise" className="section split">
+        <div className="split-content">
+          <h2>Adolescence Counselling Expertise</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+            gravida, mauris eget mattis auctor, risus metus lacinia eros, in
+            maximus magna magna sit amet turpis.
+          </p>
+          <div className="pill-grid">
+            <span>Test anxiety</span>
+            <span>Peer pressure</span>
+            <span>Depression</span>
+            <span>Relationship management</span>
+            <span>Anger & emotional outbursts</span>
+          </div>
+        </div>
+        <div className="split-media">
+          <img src={calmingImages[0]} alt="Calming nature pathway" />
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-header">
+          <h2>Techniques We Use</h2>
+          <p>
+            These are therapeutic techniques applied to meet your needs. Lorem
+            ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+        <div className="techniques-grid">
+          <div className="tech-card">Flooding</div>
+          <div className="tech-card">Imagery</div>
+          <div className="tech-card">Logotherapy</div>
+          <div className="tech-card">Exposure therapy</div>
+          <div className="tech-card">Grounding practices</div>
+        </div>
+      </section>
+
+      <section className="section credentials">
+        <div className="section-header">
+          <h2>Certifications</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+            commodo turpis vitae ipsum facilisis, vitae tincidunt urna
+            tincidunt.
+          </p>
+        </div>
+        <div className="credentials-grid">
+          <div className="credential-card">
+            <h4>Clinical Training</h4>
+            <ul>
+              <li>CBT</li>
+              <li>EMDR</li>
+              <li>Neurogenesis</li>
+              <li>Lucid Dreaming</li>
+              <li>Functional Family Therapy</li>
+              <li>Hypnotherapy (basic)</li>
+            </ul>
+          </div>
+          <div className="credential-card highlight">
+            <h4>International Accreditation</h4>
+            <p>Internationally Accredited Hypnotherapist</p>
+            <div className="badge">Accredited</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials" className="section">
+        <div className="section-header">
+          <h2>Testimonials</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+            pulvinar quam et sapien pellentesque, ac luctus neque ullamcorper.
+          </p>
+        </div>
+        <div className="testimonial-grid">
+          {[
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+            "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Quisque gravida, mauris eget mattis auctor, risus metus lacinia eros.",
+            "Vivamus dignissim, mauris vel ultricies tristique, metus mi tempus.",
+            "Aliquam erat volutpat. Integer imperdiet nisl vel mattis viverra.",
+          ].map((quote, index) => (
+            <article key={quote} className="testimonial-card">
+              <p>“{quote}”</p>
+              <div className="testimonial-footer">
+                <div className="avatar" aria-hidden="true">
+                  {String.fromCharCode(65 + index)}
+                </div>
+                <div>
+                  <h4>Client {index + 1}</h4>
+                  <span>Verified Review</span>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="contact" className="section contact">
+        <div className="section-header">
+          <h2>Start Today</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus
+            mauris vitae augue ultricies, et malesuada dolor aliquet.
+          </p>
+        </div>
+        <div className="contact-grid">
+          <div className="contact-card">
+            <h3>In-Person & Online</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              nec sapien at lacus interdum aliquet.
+            </p>
+            <button className="cta primary">Schedule</button>
+          </div>
+          <div className="contact-card">
+            <h3>Quiet Studio</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu
+              consequat justo, sed cursus libero.
+            </p>
+            <button className="cta ghost">View Hours</button>
+          </div>
+          <div className="contact-card">
+            <h3>Rapid Response</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+              bibendum tincidunt justo.
+            </p>
+            <button className="cta ghost">Text Now</button>
+          </div>
+        </div>
+        <div className="contact-images">
+          <img src={calmingImages[1]} alt="Meditation by the window" />
+          <img src={calmingImages[2]} alt="Soft light and greenery" />
+        </div>
+      </section>
+
+      <footer className="footer">
+        <div>
+          <h3>Aurora Bloom Therapy Studio</h3>
+          <p>Calm minds. Brave hearts. Better days.</p>
+        </div>
+        <div>
+          <p>hello@aurorabloom.com</p>
+          <p>+1 (555) 123-4567</p>
+        </div>
+        <div>
+          <p>Mon - Sat · 9:00 AM - 7:00 PM</p>
+          <p>Serenity Avenue, Suite 12</p>
+        </div>
+      </footer>
+    </div>
   );
 }
