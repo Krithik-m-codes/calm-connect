@@ -1,6 +1,5 @@
 // Site-wide configuration — brand name, contact info, hero copy, section copy
-export const siteName = "Aurora Bloom Therapy Studio";
-export const siteTagline = "Calm minds. Brave hearts. Better days.";
+export const siteName = "CalmConnect";
 
 // ⚠️ Replace PHONENUMBER with actual WhatsApp number
 export const whatsappUrl = "https://wa.me/PHONENUMBER";
@@ -21,9 +20,12 @@ export const hero = {
 };
 
 export const heroImages = {
-  main: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80",
+  // main: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80",
+  main: "https://i.pinimg.com/736x/c7/cb/c2/c7cbc243076cb3bc62c7118a03f5df08.jpg",
+  // secondary:
+  //   "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80",
   secondary:
-    "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80",
+    "https://i.pinimg.com/736x/81/e1/76/81e17675b7a7cfd1302b6b980463b3c2.jpg",
 };
 
 export const calmingImages = [

@@ -4,7 +4,7 @@ export const adolescenceTags = [
   "Depression",
   "Relationship management",
   "Anger & emotional outbursts",
-  "Fears and Phobias",
+  "Fear, phobias, and dread",
   "Cyberchondriacs",
   "Identity Crisis",
 ];

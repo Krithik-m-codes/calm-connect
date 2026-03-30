@@ -1,13 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router";
-import {
-  siteName,
-  siteTagline,
-  email,
-  phone,
-  hours,
-  address,
-} from "../../data/siteConfig";
+import { siteName, email, phone, hours, address } from "../../data/siteConfig";
 import {
   useMotionSafe,
   fadeUp,
@@ -31,7 +24,6 @@ export default function Footer() {
     >
       <motion.div variants={v} transition={defaultTransition}>
         <h3 className="font-heading text-lg mt-0">{siteName}</h3>
-        <p className="text-sm text-brand-white/70">{siteTagline}</p>
       </motion.div>
 
       <motion.div variants={v} transition={defaultTransition}>

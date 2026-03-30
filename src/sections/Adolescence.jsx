@@ -74,7 +74,7 @@ export default function Adolescence() {
             title="Adolescence Counselling"
             subtitle={adolescenceIntro}
           />
-          <div className="flex flex-wrap gap-3 mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mt-8 w-full">
             {adolescenceTags.map((tag) => (
               <motion.div
                 key={tag}
@@ -84,8 +84,9 @@ export default function Adolescence() {
                     ? { type: "spring", stiffness: 300, damping: 20 }
                     : { duration: 0 }
                 }
+                className="flex justify-center"
               >
-                <Badge className="bg-white border border-brand-dark/10 shadow-sm hover:shadow-md transition-shadow py-3 px-6 text-base lg:text-lg">
+                <Badge className="bg-white border border-brand-dark/10 shadow-sm hover:shadow-md transition-shadow py-2 px-4 text-sm md:text-base max-w-full text-center whitespace-pre-line w-full">
                   {tag}
                 </Badge>
               </motion.div>

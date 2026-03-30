@@ -158,6 +158,7 @@ export default function Hero() {
           >
             <img
               src={heroImages.main}
+              // src="@/src/assets/hero-main.webp"
               alt="Therapist in a calm studio"
               className="w-full rounded-3xl h-100 lg:h-120 object-cover"
             />

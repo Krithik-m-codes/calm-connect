@@ -52,12 +52,14 @@ export default function Qualifications() {
 
         <motion.div
           variants={animate ? stagger(0.08) : {}}
-          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid grid-cols-1 gap-4 md:gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           {clinicalTraining.map((item) => (
             <motion.div key={item} variants={v} transition={defaultTransition}>
-              <Card>
-                <p className="text-base lg:text-lg font-medium">{item}</p>
+              <Card className="h-full bg-white border border-brand-dark/10 shadow-sm hover:shadow-md transition-shadow p-3.5 md:p-6 flex items-center justify-center">
+                <p className="text-sm md:text-base lg:text-lg font-medium">
+                  {item}
+                </p>
               </Card>
             </motion.div>
           ))}

@@ -11,6 +11,6 @@ export const clinicalTraining = [
   "Neurogenesis",
   "Lucid Dreaming",
   "Functional Family Therapy",
-  "Hypnotherapy (basic)",
+  "Hypnotherapy (Advanced)",
   "Inner Engineering by Isha Foundation",
 ];

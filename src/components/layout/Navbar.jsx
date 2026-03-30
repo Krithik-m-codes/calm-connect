@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router";
 import { motion } from "framer-motion";
-import { siteName, siteTagline, whatsappUrl } from "../../data/siteConfig";
+import { siteName, whatsappUrl } from "../../data/siteConfig";
+import logo from "../../assets/icons/logo.png";
 import Button from "../ui/Button";
 import {
   useMotionSafe,
@@ -40,14 +41,11 @@ export default function Navbar() {
         to="/"
         className="flex items-center gap-4 hover:opacity-90 transition"
       >
-        <span className="grid h-12 w-12 place-items-center rounded-[14px] bg-brand-dark font-heading text-2xl font-semibold text-brand-white shadow-[0_30px_60px_rgba(24,45,41,0.12)]">
-          A
-        </span>
+        <img src={logo} alt="Logo icon" className="h-12 w-12" />
         <div>
           <p className="font-heading text-xl leading-tight m-0 text-brand-dark">
             {siteName}
           </p>
-          <p className="text-sm text-brand-muted mt-1 m-0">{siteTagline}</p>
         </div>
       </Link>
 

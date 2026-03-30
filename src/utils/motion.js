@@ -31,9 +31,13 @@ export const springPop = {
   visible: { opacity: 1, scale: 1 },
 };
 
-export const defaultTransition = { duration: 0.35, ease: "easeOut" };
+export const defaultTransition = {
+  duration: 0.4,
+  ease: "easeOut",
+  delay: 0.15,
+};
 
-export const stagger = (delay = 0.08) => ({
+export const stagger = (delay = 0.18) => ({
   visible: { transition: { staggerChildren: delay } },
 });
 
