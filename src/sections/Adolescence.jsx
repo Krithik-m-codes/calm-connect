@@ -3,7 +3,7 @@ import { adolescenceTags } from "../data/adolescenceTags";
 import { adolescenceIntro, calmingImages } from "../data/siteConfig";
 import SectionHeading from "../components/ui/SectionHeading";
 import Badge from "../components/ui/Badge";
-import { useMotionSafe, springPop, stagger, noMotion } from "../utils/motion";
+import { useMotionSafe, springPop, noMotion } from "../utils/motion";
 
 export default function Adolescence() {
   const animate = useMotionSafe();

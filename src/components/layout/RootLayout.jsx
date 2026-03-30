@@ -17,7 +17,7 @@ export default function RootLayout() {
     <div className="relative min-h-screen flex flex-col bg-linear-to-br from-white/70 to-brand-mint/30">
       {/* Decorative blurs */}
       <div className="pointer-events-none absolute -top-40 -right-30 z-0 h-120 w-120 rounded-full bg-brand-sun/50 blur-3xl opacity-50" />
-      <div className="pointer-events-none absolute -bottom-30 -left-35 z-0 h-105 w-105 rounded-full bg-brand-sage/35 blur-3xl opacity-50" />
+      {/* <div className="pointer-events-none absolute -bottom-30 -left-35 z-0 h-105 w-105 rounded-full bg-brand-sage/35 blur-3xl opacity-50" /> */}
 
       <Ticker />
       <Navbar />

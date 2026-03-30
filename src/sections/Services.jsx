@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { services } from "../data/services";
 import { servicesIntro } from "../data/siteConfig";
-import SectionHeading from "../components/ui/SectionHeading";
-import Card from "../components/ui/Card";
+
 import {
   useMotionSafe,
   fadeUp,

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { features } from "../data/features";
-import Card from "../components/ui/Card";
+
 import {
   useMotionSafe,
   fadeUp,

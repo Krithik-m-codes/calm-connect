@@ -64,7 +64,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           variants={{ visible: { transition: { staggerChildren: 0.15 } } }}
-          className="flex flex-col justify-center"
+          className="flex flex-col justify-center md:pr-72 lg:pr-0"
         >
           <motion.p
             variants={v}
@@ -162,14 +162,14 @@ export default function Hero() {
               alt="Therapist in a calm studio"
               className="w-full rounded-3xl h-100 lg:h-120 object-cover"
             />
-            <p className="mt-3 text-sm lg:text-base font-medium text-brand-muted text-center">
+            <p className="mt-3 mr-2 md:mr-16 text-sm lg:text-base font-medium text-brand-muted text-end">
               Safe, welcoming, and grounded.
             </p>
           </motion.div>
           <motion.div
             variants={v}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="absolute -bottom-12 -left-4 lg:-left-16 rounded-3xl bg-white/90 p-3 shadow-[0_20px_40px_rgba(24,45,41,0.12)] backdrop-blur-md hidden md:block w-64"
+            className="absolute -bottom-12 -left-4 lg:-left-6 rounded-3xl bg-white/90 p-3 shadow-[0_20px_40px_rgba(24,45,41,0.12)] backdrop-blur-md hidden md:block w-64"
           >
             <img
               src={heroImages.secondary}

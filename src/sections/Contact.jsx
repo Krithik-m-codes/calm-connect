@@ -50,12 +50,6 @@ export default function Contact() {
           >
             Message Me on WhatsApp
           </Button>
-          <Button
-            variant="secondary"
-            className="text-base lg:text-lg py-4 px-8"
-          >
-            Start a Conversation Form
-          </Button>
         </motion.div>
 
         <motion.p
