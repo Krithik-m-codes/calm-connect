@@ -1,4 +1,5 @@
 import Hero from "../sections/Hero";
+import Stats from "../sections/Stats";
 import About from "../sections/About";
 import Features from "../sections/Features";
 import Services from "../sections/Services";
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <Stats />
       <About />
       <Features />
       <Services />

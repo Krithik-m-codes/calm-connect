@@ -94,6 +94,13 @@ export default function Navbar() {
         >
           Stories
         </a>
+        <Link
+          to="/free-resources"
+          className="border-b-2 border-transparent transition hover:border-brand-coral pb-1 text-brand-dark"
+          onClick={() => setMenuOpen(false)}
+        >
+          Free Resources
+        </Link>
         <a
           href={isHome ? "#contact" : "/#contact"}
           className="border-b-2 border-transparent transition hover:border-brand-coral pb-1 text-brand-dark"

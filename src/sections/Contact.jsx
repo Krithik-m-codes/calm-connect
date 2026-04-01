@@ -66,7 +66,7 @@ export default function Contact() {
           </a>
         </motion.p>
 
-        <motion.div
+        {/* <motion.div
           variants={v}
           transition={defaultTransition}
           className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2"
@@ -81,7 +81,7 @@ export default function Contact() {
             alt="Soft light and greenery"
             className="rounded-2xl h-56 w-full object-cover shadow-[0_30px_60px_rgba(24,45,41,0.12)]"
           />
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </section>
   );

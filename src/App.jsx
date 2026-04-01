@@ -5,6 +5,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import Support from "./pages/Support";
 import NotFound from "./pages/NotFound";
+import FreeResources from "./pages/FreeResources";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="privacy" element={<PrivacyPolicy />} />
         <Route path="terms" element={<TermsOfService />} />
         <Route path="support" element={<Support />} />
+        <Route path="free-resources" element={<FreeResources />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

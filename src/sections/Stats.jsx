@@ -50,28 +50,35 @@ export default function Stats() {
   const v = animate ? fadeUp : noMotion;
 
   return (
-    <section className="px-[clamp(20px,6vw,80px)] py-20">
+    <section className="px-[clamp(20px,6vw,80px)] pt-12 pb-24 border-b border-brand-dark/10">
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={animate ? stagger(0.12) : {}}
-        className="grid grid-cols-1 gap-6 sm:grid-cols-3"
+        className="max-w-7xl mx-auto grid grid-cols-1 gap-12 sm:grid-cols-3 text-center sm:text-left"
       >
         {stats.map((s) => (
-          <motion.div key={s.id} variants={v} transition={defaultTransition}>
-            <h3 className="font-heading text-2xl mb-1">
-              {s.value ? (
-                <>
-                  <CountUp target={s.value} />+ {s.label}
-                </>
-              ) : (
-                s.label
-              )}
-            </h3>
-            <p className="text-sm text-brand-muted leading-relaxed">
-              {s.description}
-            </p>
+          <motion.div
+            key={s.id}
+            variants={v}
+            transition={defaultTransition}
+            className="flex flex-col items-center sm:items-start"
+          >
+            <div className="flex-1 w-full flex flex-col justify-start text-center sm:text-left">
+              <h3 className="font-heading text-3xl lg:text-4xl mb-3 text-brand-dark">
+                {s.value ? (
+                  <>
+                    <CountUp target={s.value} />+ {s.label}
+                  </>
+                ) : (
+                  s.label
+                )}
+              </h3>
+              <p className="text-sm lg:text-base text-brand-muted leading-relaxed max-w-sm sm:max-w-none mx-auto">
+                {s.description}
+              </p>
+            </div>
           </motion.div>
         ))}
       </motion.div>

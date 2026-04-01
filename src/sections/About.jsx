@@ -13,23 +13,23 @@ export default function About() {
   const v = animate ? fadeUp : noMotion;
 
   return (
-    <section className="px-[clamp(20px,6vw,80px)] py-20 bg-white/40">
+    <section className="px-[clamp(20px,6vw,80px)] py-20 pb-10">
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.05 }}
         variants={animate ? stagger(0.15) : {}}
-        className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24"
+        className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12"
       >
         <motion.div
           variants={v}
           transition={defaultTransition}
-          className="space-y-6"
+          className="flex flex-col space-y-6 bg-brand-sand/30 border border-brand-dark/5 rounded-[2.5rem] p-10 lg:p-14 shadow-sm hover:shadow-md transition-shadow duration-300"
         >
-          <div className="inline-flex items-center justify-center p-4 bg-brand-sand rounded-2xl shadow-sm mb-2">
+          <div className="inline-flex items-center self-start justify-center p-4 bg-white/70 backdrop-blur-sm rounded-[1.5rem] shadow-xs mb-4">
             {/* Heart / Mind icon placeholder */}
             <svg
-              className="w-8 h-8 text-brand-dark"
+              className="w-10 h-10 text-brand-dark"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -53,12 +53,12 @@ export default function About() {
         <motion.div
           variants={v}
           transition={defaultTransition}
-          className="space-y-6"
+          className="flex flex-col space-y-6 bg-brand-mint/20 border border-brand-dark/5 rounded-[2.5rem] p-10 lg:p-14 shadow-sm hover:shadow-md transition-shadow duration-300"
         >
-          <div className="inline-flex items-center justify-center p-4 bg-brand-mint rounded-2xl shadow-sm mb-2">
+          <div className="inline-flex items-center self-start justify-center p-4 bg-white/70 backdrop-blur-sm rounded-[1.5rem] shadow-xs mb-4">
             {/* Journey / Path icon placeholder */}
             <svg
-              className="w-8 h-8 text-brand-dark"
+              className="w-10 h-10 text-brand-dark"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

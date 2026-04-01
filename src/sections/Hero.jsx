@@ -1,70 +1,27 @@
 import { motion } from "framer-motion";
 import { hero, heroImages, whatsappUrl } from "../data/siteConfig";
-import { stats } from "../data/stats";
 import Button from "../components/ui/Button";
+import QueryForm from "../components/ui/QueryForm";
 import {
   useMotionSafe,
   fadeUp,
   defaultTransition,
   noMotion,
 } from "../utils/motion";
-import { useEffect, useRef, useState } from "react";
-
-function CountUp({ target, suffix = "" }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const started = useRef(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !started.current) {
-          started.current = true;
-          const num = parseInt(target, 10);
-          if (isNaN(num)) {
-            setCount(target);
-            return;
-          }
-          let current = 0;
-          const step = Math.max(1, Math.floor(num / 40));
-          const timer = setInterval(() => {
-            current += step;
-            if (current >= num) {
-              current = num;
-              clearInterval(timer);
-            }
-            setCount(current);
-          }, 30);
-        }
-      },
-      { threshold: 0.5 },
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [target]);
-
-  const num = parseInt(target, 10);
-  return (
-    <span ref={ref}>
-      {isNaN(num) ? target : count}
-      {suffix}
-    </span>
-  );
-}
 
 export default function Hero() {
   const animate = useMotionSafe();
   const v = animate ? fadeUp : noMotion;
 
   return (
-    <section className="relative z-1 px-[clamp(20px,6vw,80px)] pt-28 lg:pt-32 pb-24 flex items-center">
-      <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 w-full max-w-7xl mx-auto">
+    <section className="relative z-1 px-[clamp(20px,6vw,80px)] pt-28 lg:pt-32 pb-24 flex flex-col justify-center min-h-[90vh]">
+      <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 w-full max-w-7xl mx-auto mb-12">
         {/* Copy side */}
         <motion.div
           initial="hidden"
           animate="visible"
           variants={{ visible: { transition: { staggerChildren: 0.15 } } }}
-          className="flex flex-col justify-center md:pr-72 lg:pr-0"
+          className="flex flex-col justify-center lg:pr-10"
         >
           <motion.p
             variants={v}
@@ -99,7 +56,7 @@ export default function Hero() {
                 : noMotion
             }
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="flex flex-wrap gap-4 mt-2 mb-12"
+            className="flex flex-wrap gap-4 mt-2"
           >
             <Button
               variant="whatsapp"
@@ -112,36 +69,6 @@ export default function Hero() {
               Call Clinic
             </Button>
           </motion.div>
-
-          {/* Stats inline */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
-            className="grid grid-cols-1 gap-6 sm:grid-cols-3 pt-6 border-t border-brand-dark/10"
-          >
-            {stats.map((s) => (
-              <motion.div
-                key={s.id}
-                variants={v}
-                transition={defaultTransition}
-              >
-                <h3 className="font-heading text-2xl lg:text-3xl mb-1 text-brand-dark">
-                  {s.value ? (
-                    <>
-                      <CountUp target={s.value} suffix="" /> {s.label}
-                    </>
-                  ) : (
-                    s.label
-                  )}
-                </h3>
-                <p className="text-sm lg:text-base text-brand-muted leading-relaxed">
-                  {s.description}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
         </motion.div>
 
         {/* Images side */}
@@ -149,36 +76,47 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
-          className="grid gap-6 relative"
+          className="grid gap-6 relative mt-12 lg:mt-0"
         >
           <motion.div
             variants={v}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="rounded-4xl bg-white/80 p-4 shadow-[0_30px_60px_rgba(24,45,41,0.08)] backdrop-blur-sm"
+            className="rounded-4xl bg-white/80 p-4 shadow-[0_30px_60px_rgba(24,45,41,0.08)] backdrop-blur-sm mx-auto w-full max-w-lg relative z-10"
           >
             <img
               src={heroImages.main}
-              // src="@/src/assets/hero-main.webp"
               alt="Therapist in a calm studio"
-              className="w-full rounded-3xl h-100 lg:h-120 object-cover"
+              className="w-full rounded-3xl h-96 lg:h-128 object-cover"
             />
-            <p className="mt-3 mr-2 md:mr-16 text-sm lg:text-base font-medium text-brand-muted text-end">
+            <p className="mt-3 text-sm lg:text-base font-medium text-brand-muted text-center">
               Safe, welcoming, and grounded.
             </p>
           </motion.div>
           <motion.div
             variants={v}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="absolute -bottom-12 -left-4 lg:-left-6 rounded-3xl bg-white/90 p-3 shadow-[0_20px_40px_rgba(24,45,41,0.12)] backdrop-blur-md hidden md:block w-64"
+            className="absolute lg:bottom-12 lg:-left-12 -bottom-6 -left-2 rounded-3xl bg-white/90 p-3 shadow-[0_20px_40px_rgba(24,45,41,0.12)] backdrop-blur-md hidden md:block w-48 lg:w-64 z-20"
           >
             <img
               src={heroImages.secondary}
               alt="Supportive conversation"
-              className="w-full rounded-2xl h-45 object-cover"
+              className="w-full rounded-2xl h-36 lg:h-45 object-cover"
             />
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Full-width Query Form below Hero Content */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={v}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="w-full max-w-7xl mx-auto mt-16 lg:mt-24 relative z-30"
+      >
+        <QueryForm />
+      </motion.div>
     </section>
   );
 }
