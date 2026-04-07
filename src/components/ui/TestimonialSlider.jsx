@@ -46,7 +46,7 @@ export default function TestimonialSlider() {
             style={{ backgroundColor: "var(--color-soul-cream)" }}
           >
             <p className="text-xl md:text-3xl lg:text-4xl leading-snug md:leading-relaxed font-bridge italic mb-10 tracking-tight" style={{ color: "var(--color-bg-deep)" }}>
-              &ldquo;{t.quote}&rdquo;
+              &ldquo;&rdquo;{t.quote}&rdquo;
             </p>
             <div className="flex flex-col items-center gap-3">
               {/* Avatar — blush circle with initials in sage */}

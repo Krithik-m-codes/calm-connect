@@ -16,7 +16,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="px-[clamp(20px,6vw,80px)] py-20 relative overflow-hidden"
+      className="px-[clamp(20px,6vw,80px)] py-12 -mt-4 relative overflow-hidden"
     >
       {/* Watercolor blob background */}
       <div

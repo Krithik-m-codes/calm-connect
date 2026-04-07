@@ -31,7 +31,7 @@ export default function Qualifications() {
 
   return (
     <section
-      className="px-[clamp(20px,6vw,80px)] py-20"
+      className="px-[clamp(20px,6vw,80px)] py-4 md:py-20"
       style={{ backgroundColor: "var(--color-bg-deep)" }}
     >
       <motion.div
@@ -52,18 +52,18 @@ export default function Qualifications() {
 
         <motion.div
           variants={animate ? stagger(0.08) : {}}
-          className="grid grid-cols-1 gap-4 md:gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid grid-cols-1 gap-2 md:gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           {clinicalTraining.map((item) => (
             <motion.div key={item} variants={v} transition={defaultTransition}>
-              <div className="h-full rounded-2xl md:rounded-3xl p-6 md:p-8 bg-white/10 border border-white/15 backdrop-blur-sm hover:bg-white/15 transition-all duration-500 flex flex-col gap-3">
+              <div className="h-full rounded-2xl md:rounded-3xl p-2 md:p-4 bg-white/10 border border-white/15 backdrop-blur-sm hover:bg-white/15 transition-all duration-500 flex flex-col gap-2">
                 <div className="flex items-start gap-3">
                   <ScrollDiplomaIcon className="text-soul-gold shrink-0 mt-1" size={24} />
-                  <h4 className="font-display text-lg lg:text-xl font-semibold text-soul-cream">
+                  <h4 className="font-display text-sm lg:text-base font-semibold text-soul-cream">
                     {item}
                   </h4>
                 </div>
-                <p className="text-sm text-soul-cream/60 leading-relaxed font-science pl-9">
+                <p className="text-[0.6875rem] text-soul-cream/60 leading-relaxed font-science pl-9">
                   {clinicalDescriptions[item] || "Specialized clinical training"}
                 </p>
               </div>

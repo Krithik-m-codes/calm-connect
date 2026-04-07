@@ -14,7 +14,7 @@ export default function StartToday() {
   const v = animate ? fadeUp : noMotion;
 
   return (
-    <section className="px-4 md:px-8 py-24 mb-10 w-full max-w-7xl mx-auto">
+    <section className="px-4 md:px-8 py-20 mb-2 w-full max-w-7xl mx-auto">
       <motion.div
         initial="hidden"
         whileInView="visible"
