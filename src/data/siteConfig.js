@@ -1,10 +1,10 @@
 // Site-wide configuration — brand name, contact info, hero copy, section copy
-export const siteName = "CalmConnect";
+export const siteName = "KalmKonnect";
 
 // ⚠️ Replace PHONENUMBER with actual WhatsApp number
-export const whatsappUrl = "https://wa.me/PHONENUMBER";
-export const email = "calmconnect@email.com";
-export const phone = "+1 (555) 123-4567";
+export const whatsappUrl = "https://wa.me/8679003334";
+export const email = "counselling.therapy@kalmkonnect.com";
+export const phone = "+91 86790 03334";
 export const hours = "Mon - Sat · 9:00 AM - 7:00 PM";
 export const address = "Serenity Avenue, Suite 12";
 

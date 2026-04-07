@@ -4,9 +4,8 @@ import {
   contactSubheading,
   whatsappUrl,
   email,
-  calmingImages,
 } from "../data/siteConfig";
-import SectionHeading from "../components/ui/SectionHeading";
+import { BotanicalDivider } from "../components/ui/BotanicalIcons";
 import Button from "../components/ui/Button";
 import {
   useMotionSafe,
@@ -31,22 +30,25 @@ export default function Contact() {
         className="text-center"
       >
         <motion.div variants={v} transition={defaultTransition}>
-          <SectionHeading
-            title={contactHeading}
-            subtitle={contactSubheading}
-            className="mx-auto text-center"
-          />
+          <BotanicalDivider className="mb-6" />
+          <h2 className="font-soul text-[clamp(2.5rem,5vw,3.5rem)] leading-tight mb-4 text-bg-deep">
+            {contactHeading}
+          </h2>
+          <p className="text-base lg:text-xl leading-relaxed max-w-2xl mx-auto font-science" style={{ color: "#6b6b6b" }}>
+            {contactSubheading}
+          </p>
         </motion.div>
 
         <motion.div
           variants={v}
           transition={defaultTransition}
-          className="flex flex-wrap items-center justify-center gap-5 mt-6"
+          className="flex flex-wrap items-center justify-center gap-5 mt-8"
         >
           <Button
             variant="whatsapp"
             href={whatsappUrl}
             className="text-base lg:text-lg py-4 px-8"
+            leafIcon
           >
             Message Me on WhatsApp
           </Button>
@@ -55,33 +57,18 @@ export default function Contact() {
         <motion.p
           variants={v}
           transition={defaultTransition}
-          className="mt-8 text-base lg:text-lg text-brand-muted"
+          className="mt-8 text-base lg:text-lg font-science"
+          style={{ color: "#6b6b6b" }}
         >
           Prefer email? Write to me at:{" "}
           <a
             href={`mailto:${email}`}
-            className="underline underline-offset-2 hover:text-brand-dark"
+            className="underline underline-offset-4 hover:text-soul-gold transition-colors duration-500"
+            style={{ color: "var(--color-soul-gold)" }}
           >
             {email}
           </a>
         </motion.p>
-
-        {/* <motion.div
-          variants={v}
-          transition={defaultTransition}
-          className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2"
-        >
-          <img
-            src={calmingImages[1]}
-            alt="Meditation by the window"
-            className="rounded-2xl h-56 w-full object-cover shadow-[0_30px_60px_rgba(24,45,41,0.12)]"
-          />
-          <img
-            src={calmingImages[2]}
-            alt="Soft light and greenery"
-            className="rounded-2xl h-56 w-full object-cover shadow-[0_30px_60px_rgba(24,45,41,0.12)]"
-          />
-        </motion.div> */}
       </motion.div>
     </section>
   );

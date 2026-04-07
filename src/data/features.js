@@ -15,7 +15,7 @@ export const features = [
     id: 3,
     title: "Digital Wellbeing",
     description:
-      "Healing modern minds through cybernetiqttes, mindful scrolling, and digital burnout & e-friendship care.",
+      "Healing modern minds through cyber-etiquette, mindful scrolling, and digital burnout & e-friendship care.",
   },
   {
     id: 4,

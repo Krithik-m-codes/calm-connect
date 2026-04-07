@@ -1,78 +1,119 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap");
 @import "tailwindcss";
 
 @theme {
+  /* ─── Science & Soul palette ─── */
+  --color-soul-sage: #7A9E7E;
+  --color-soul-blush: #E8C4B8;
+  --color-soul-gold: #C9A84C;
+  --color-soul-cream: #FAF6F0;
+  --color-soul-lotus: #D4849A;
+  --color-science-slate: #2C3E50;
+  --color-science-teal: #3D7A8A;
+  --color-science-border: #D8E4E2;
+  --color-bg-primary: #FAF6F0;
+  --color-bg-sage-light: #F0F5F0;
+  --color-bg-deep: #2D4A35;
+
+  /* Legacy brand tokens (kept for compatibility) */
   --color-brand-charcoal: #1e2a2a;
-  --color-brand-dark: #1f4d4a;
-  --color-brand-sage: #96b8ad;
+  --color-brand-dark: #2D4A35;
+  --color-brand-sage: #7A9E7E;
   --color-brand-mint: #d8e6df;
-  --color-brand-sand: #f3eee7;
-  --color-brand-coral: #f2a79f;
-  --color-brand-sun: #f6d28b;
+  --color-brand-sand: #FAF6F0;
+  --color-brand-coral: #D4849A;
+  --color-brand-sun: #C9A84C;
   --color-brand-white: #ffffff;
-  --color-brand-bg: #e9f1ef;
-  --color-brand-muted: rgba(30, 42, 42, 0.7);
+  --color-brand-bg: #FAF6F0;
+  --color-brand-muted: rgba(74, 74, 74, 0.85);
 
+  /* ─── Typography ─── */
+  --font-soul: "Cormorant Garamond", serif;
   --font-heading: "Cormorant Garamond", serif;
-  --font-body: "Manrope", sans-serif;
+  --font-bridge: "Lora", serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-science: "DM Sans", sans-serif;
+  --font-mono: "DM Mono", monospace;
+  --font-display: "Playfair Display", serif;
 
+  /* ─── Animations ─── */
   --animate-marquee: marquee 30s linear infinite;
   --animate-pulse-soft: pulse-soft 2.5s ease-in-out infinite;
+  --animate-float-gentle: floatGentle 6s ease-in-out infinite;
+  --animate-bloom-in: bloomIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
+/* ─── Keyframes ─── */
 @keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
 
 @keyframes pulse-soft {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(31, 77, 74, 0.3);
-  }
-
-  50% {
-    box-shadow: 0 0 0 8px rgba(31, 77, 74, 0);
-  }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(122, 158, 126, 0.3); }
+  50% { box-shadow: 0 0 0 8px rgba(122, 158, 126, 0); }
 }
 
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-8px); }
+}
+
+@keyframes bloomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* ─── Global ─── */
 html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: var(--color-brand-dark) var(--color-brand-mint);
+  scrollbar-color: var(--color-soul-sage) var(--color-soul-cream);
 }
 
 body {
   font-family: var(--font-body);
-  color: var(--color-brand-charcoal);
+  color: #4a4a4a;
   margin: 0;
   overflow-x: hidden;
-  background: radial-gradient(circle at top, #f6fbf8, #e0ece8 55%, #c6d6d0);
+  background: var(--color-bg-primary);
 }
 
 * {
   box-sizing: border-box;
 }
 
-/* Custom scrollbar - consolidated into html block above */
+/* Global gentle transition default */
+a, button, .transition-soul {
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ─── Scrollbar ─── */
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-brand-mint);
+  background: var(--color-soul-cream);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-brand-dark);
+  background: var(--color-soul-sage);
   border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-brand-sage);
+  background: var(--color-bg-deep);
 }
+
+/* ─── Utility classes for the Science & Soul theme ─── */
+.font-soul { font-family: var(--font-soul); }
+.font-bridge { font-family: var(--font-bridge); }
+.font-science { font-family: var(--font-science); }
+.font-mono-science { font-family: var(--font-mono); }
+.font-display { font-family: var(--font-display); }

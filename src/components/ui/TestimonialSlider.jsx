@@ -26,8 +26,11 @@ export default function TestimonialSlider() {
 
   return (
     <div className="relative mx-auto mt-16 max-w-4xl px-4 md:px-8">
-      {/* Decorative Quote Icon behind the slides */}
-      <div className="absolute -top-12 md:-top-20 -left-4 md:-left-8 z-0 text-[10rem] md:text-[14rem] leading-none text-brand-mint/40 font-serif opacity-70 select-none">
+      {/* Large decorative quote mark in soul-gold */}
+      <div
+        className="absolute -top-12 md:-top-20 -left-4 md:-left-8 z-0 text-[10rem] md:text-[14rem] leading-none font-soul opacity-30 select-none"
+        style={{ color: "var(--color-soul-gold)" }}
+      >
         &ldquo;
       </div>
 
@@ -38,24 +41,30 @@ export default function TestimonialSlider() {
             initial={{ opacity: 0, y: 15, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -15, scale: 0.98 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col items-center justify-center text-center max-w-3xl mx-auto"
+            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="flex flex-col items-center justify-center text-center max-w-3xl mx-auto rounded-3xl p-8 lg:p-12"
+            style={{ backgroundColor: "var(--color-soul-cream)" }}
           >
-            <p className="text-xl md:text-3xl lg:text-4xl leading-snug md:leading-relaxed text-brand-dark/90 font-serif mb-10 tracking-tight">
+            <p className="text-xl md:text-3xl lg:text-4xl leading-snug md:leading-relaxed font-bridge italic mb-10 tracking-tight" style={{ color: "var(--color-bg-deep)" }}>
               &ldquo;{t.quote}&rdquo;
             </p>
             <div className="flex flex-col items-center gap-3">
+              {/* Avatar — blush circle with initials in sage */}
               <div
-                className="flex h-14 w-14 items-center justify-center rounded-full bg-linear-to-tr transition-colors from-brand-sage/60 to-brand-mint/60 shadow-sm text-brand-dark font-medium text-lg"
+                className="flex h-14 w-14 items-center justify-center rounded-full shadow-sm text-lg font-medium font-soul"
+                style={{
+                  backgroundColor: "rgba(232, 196, 184, 0.4)",
+                  color: "var(--color-soul-sage)",
+                }}
                 aria-hidden="true"
               >
                 {t.name.charAt(t.name.length - 1)}
               </div>
               <div className="flex flex-col items-center">
-                <h4 className="text-lg md:text-xl font-semibold tracking-tight text-brand-dark">
+                <h4 className="text-lg md:text-xl font-semibold tracking-tight font-display" style={{ color: "var(--color-bg-deep)" }}>
                   {t.name}
                 </h4>
-                <span className="text-sm font-medium uppercase tracking-widest text-brand-charcoal/60 mt-1">
+                <span className="text-sm font-medium uppercase tracking-widest mt-1 font-science" style={{ color: "#8a8a8a" }}>
                   {t.label}
                 </span>
               </div>
@@ -64,12 +73,13 @@ export default function TestimonialSlider() {
         </AnimatePresence>
       </div>
 
-      {/* Modern, soft Controls */}
+      {/* Controls */}
       <div className="mt-12 flex items-center justify-center gap-6">
         <button
           onClick={prev}
           aria-label="Previous testimonial"
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-[0_8px_20px_rgba(0,0,0,0.04)] text-brand-dark transition-all hover:bg-brand-sage hover:scale-105 hover:shadow-[0_12px_24px_rgba(0,0,0,0.06)] focus:outline-none focus:ring-2 focus:ring-brand-dark/20"
+          className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-soul-sage/30 text-soul-sage transition-all duration-500 hover:bg-soul-sage hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-soul-sage/20"
+          style={{ backgroundColor: "var(--color-soul-cream)" }}
         >
           <svg
             className="w-5 h-5 text-current"
@@ -86,7 +96,8 @@ export default function TestimonialSlider() {
           </svg>
         </button>
         <div
-          className="flex gap-3 px-6 py-3 rounded-full bg-white/40 border border-white/60 backdrop-blur-xs"
+          className="flex gap-3 px-6 py-3 rounded-full border border-soul-sage/20"
+          style={{ backgroundColor: "rgba(250, 246, 240, 0.6)" }}
           role="tablist"
           aria-label="Testimonial indicators"
         >
@@ -99,8 +110,8 @@ export default function TestimonialSlider() {
               onClick={() => setCurrent(i)}
               className={`h-2.5 rounded-full transition-all duration-500 ease-out ${
                 i === current
-                  ? "w-8 bg-brand-dark"
-                  : "w-2.5 bg-brand-dark/20 hover:bg-brand-dark/40"
+                  ? "w-8 bg-soul-sage"
+                  : "w-2.5 bg-soul-sage/25 hover:bg-soul-sage/50"
               }`}
             />
           ))}
@@ -108,7 +119,8 @@ export default function TestimonialSlider() {
         <button
           onClick={next}
           aria-label="Next testimonial"
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-[0_8px_20px_rgba(0,0,0,0.04)] text-brand-dark transition-all hover:bg-brand-sage hover:scale-105 hover:shadow-[0_12px_24px_rgba(0,0,0,0.06)] focus:outline-none focus:ring-2 focus:ring-brand-dark/20"
+          className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-soul-sage/30 text-soul-sage transition-all duration-500 hover:bg-soul-sage hover:text-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-soul-sage/20"
+          style={{ backgroundColor: "var(--color-soul-cream)" }}
         >
           <svg
             className="w-5 h-5 text-current"

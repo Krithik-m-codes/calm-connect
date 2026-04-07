@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
 import { features } from "../data/features";
+import {
+  LotusIcon,
+  LeafIcon,
+  WaveIcon,
+  FlameIcon,
+} from "../components/ui/BotanicalIcons";
 
 import {
   useMotionSafe,
@@ -9,15 +15,27 @@ import {
   noMotion,
 } from "../utils/motion";
 
+const botanicalIcons = [LotusIcon, LeafIcon, WaveIcon, FlameIcon];
+const cardBackgrounds = ["#FAF6F0", "#F7EDE8", "#FAF6F0", "#F7EDE8"];
+const iconColors = [
+  "text-soul-lotus",
+  "text-soul-sage",
+  "text-science-teal",
+  "text-soul-gold",
+];
+const evidenceBadges = [
+  "🔬 CBT-backed",
+  "🌍 WHO recognised",
+  "🧠 Research-supported",
+  "📚 Evidence-informed",
+];
+
 export default function Features() {
   const animate = useMotionSafe();
   const v = animate ? fadeUp : noMotion;
 
   return (
     <section className="px-[clamp(20px,6vw,80px)] py-10 pb-20 relative z-10 w-full overflow-hidden">
-      {/* Soft background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[400px] bg-brand-mint/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
-
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -25,26 +43,53 @@ export default function Features() {
         variants={animate ? stagger(0.1) : {}}
         className="mx-auto max-w-7xl grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
       >
-        {features.map((f) => (
-          <motion.div
-            key={f.id}
-            variants={v}
-            transition={defaultTransition}
-            className="group relative flex flex-col justify-between rounded-[2rem] bg-white/60 backdrop-blur-xl p-8 border border-white/80 shadow-[0_8px_30px_rgba(24,45,41,0.03)] hover:shadow-[0_20px_60px_rgba(24,45,41,0.08)] hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-          >
-            {/* Subtle highlight gradient on hover */}
-            <div className="absolute inset-0 bg-linear-to-b from-brand-mint/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+        {features.map((f, index) => {
+          const IconComponent = botanicalIcons[index % botanicalIcons.length];
+          return (
+            <motion.div
+              key={f.id}
+              variants={v}
+              transition={defaultTransition}
+              className="group relative flex flex-col justify-between rounded-[2rem] p-8 border border-transparent shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-1 overflow-hidden"
+              style={{
+                backgroundColor: cardBackgrounds[index % cardBackgrounds.length],
+                borderLeftColor: "transparent",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderLeftColor = "#7A9E7E";
+                e.currentTarget.style.borderLeftWidth = "3px";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderLeftColor = "transparent";
+                e.currentTarget.style.borderLeftWidth = "1px";
+              }}
+            >
+              {/* Botanical watercolor icon */}
+              <div className="mb-4">
+                <IconComponent
+                  className={iconColors[index % iconColors.length]}
+                  size={36}
+                />
+              </div>
 
-            <div className="relative z-10">
-              <h4 className="text-xl font-semibold mb-3 text-brand-dark tracking-tight leading-snug">
-                {f.title}
-              </h4>
-              <p className="text-base text-brand-muted leading-relaxed">
-                {f.description}
-              </p>
-            </div>
-          </motion.div>
-        ))}
+              <div className="relative z-10 flex-1">
+                <h4 className="font-display text-xl font-semibold mb-3 text-science-slate tracking-tight leading-snug">
+                  {f.title}
+                </h4>
+                <p className="text-base leading-relaxed font-science" style={{ color: "#6b6b6b" }}>
+                  {f.description}
+                </p>
+              </div>
+
+              {/* Evidence badge */}
+              <div className="mt-6">
+                <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-science-teal/40 text-xs font-medium text-science-teal bg-white/60">
+                  {evidenceBadges[index % evidenceBadges.length]}
+                </span>
+              </div>
+            </motion.div>
+          );
+        })}
       </motion.div>
     </section>
   );

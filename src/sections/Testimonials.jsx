@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { testimonialsSubtitle } from "../data/siteConfig";
-import SectionHeading from "../components/ui/SectionHeading";
+import { BotanicalDivider } from "../components/ui/BotanicalIcons";
 import TestimonialSlider from "../components/ui/TestimonialSlider";
 import {
   useMotionSafe,
@@ -14,7 +14,18 @@ export default function Testimonials() {
   const v = animate ? fadeUp : noMotion;
 
   return (
-    <section id="testimonials" className="px-[clamp(20px,6vw,80px)] py-20">
+    <section
+      id="testimonials"
+      className="px-[clamp(20px,6vw,80px)] py-20 relative overflow-hidden"
+    >
+      {/* Watercolor blob background */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full -z-10 pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse, rgba(232, 196, 184, 0.2), transparent 70%)",
+        }}
+      />
+
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -28,11 +39,13 @@ export default function Testimonials() {
           transition={defaultTransition}
           className="text-center"
         >
-          <SectionHeading
-            title="Testimonials"
-            subtitle={testimonialsSubtitle}
-            className="mx-auto text-center"
-          />
+          <BotanicalDivider className="mb-6" />
+          <h2 className="font-soul text-[clamp(2.5rem,5vw,3.5rem)] leading-tight mb-4 text-bg-deep">
+            Testimonials
+          </h2>
+          <p className="text-base lg:text-xl leading-relaxed max-w-2xl mx-auto font-science" style={{ color: "#6b6b6b" }}>
+            {testimonialsSubtitle}
+          </p>
         </motion.div>
 
         <motion.div variants={v} transition={defaultTransition}>

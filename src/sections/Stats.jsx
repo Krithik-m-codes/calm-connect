@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { stats } from "../data/stats";
+import { LeafBorderPattern } from "../components/ui/BotanicalIcons";
 import {
   useMotionSafe,
   fadeUp,
@@ -50,23 +51,33 @@ export default function Stats() {
   const v = animate ? fadeUp : noMotion;
 
   return (
-    <section className="px-[clamp(20px,6vw,80px)] pt-12 pb-24 border-b border-brand-dark/10">
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={animate ? stagger(0.12) : {}}
-        className="max-w-7xl mx-auto grid grid-cols-1 gap-12 sm:grid-cols-3 text-center sm:text-left"
+    <section className="px-[clamp(20px,6vw,80px)] py-0">
+      <div
+        className="max-w-7xl mx-auto rounded-3xl overflow-hidden"
+        style={{ backgroundColor: "var(--color-soul-cream)" }}
       >
-        {stats.map((s) => (
-          <motion.div
-            key={s.id}
-            variants={v}
-            transition={defaultTransition}
-            className="flex flex-col items-center sm:items-start"
-          >
-            <div className="flex-1 w-full flex flex-col justify-start text-center sm:text-left">
-              <h3 className="font-heading text-3xl lg:text-4xl mb-3 text-brand-dark">
+        {/* Botanical top border */}
+        <LeafBorderPattern className="text-soul-sage" />
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={animate ? stagger(0.12) : {}}
+          className="grid grid-cols-1 sm:grid-cols-3 text-center py-12 px-8"
+        >
+          {stats.map((s, index) => (
+            <motion.div
+              key={s.id}
+              variants={v}
+              transition={defaultTransition}
+              className={`flex flex-col items-center px-6 py-4 ${
+                index < stats.length - 1
+                  ? "sm:border-r border-b sm:border-b-0 border-soul-sage/30"
+                  : ""
+              }`}
+            >
+              <h3 className="font-soul text-3xl lg:text-4xl mb-2 text-soul-gold font-semibold">
                 {s.value ? (
                   <>
                     <CountUp target={s.value} />+ {s.label}
@@ -75,13 +86,13 @@ export default function Stats() {
                   s.label
                 )}
               </h3>
-              <p className="text-sm lg:text-base text-brand-muted leading-relaxed max-w-sm sm:max-w-none mx-auto">
+              <p className="text-sm lg:text-base leading-relaxed max-w-xs mx-auto font-science" style={{ color: "#5a5a5a" }}>
                 {s.description}
               </p>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
     </section>
   );
 }

@@ -14,11 +14,7 @@ export default function RootLayout() {
   }, [location.pathname]);
 
   return (
-    <div className="relative min-h-screen flex flex-col bg-linear-to-br from-white/70 to-brand-mint/30">
-      {/* Decorative blurs */}
-      <div className="pointer-events-none absolute -top-40 -right-30 z-0 h-120 w-120 rounded-full bg-brand-sun/50 blur-3xl opacity-50" />
-      {/* <div className="pointer-events-none absolute -bottom-30 -left-35 z-0 h-105 w-105 rounded-full bg-brand-sage/35 blur-3xl opacity-50" /> */}
-
+    <div className="relative min-h-screen flex flex-col" style={{ background: "var(--color-bg-primary)" }}>
       <Ticker />
       <Navbar />
 
@@ -29,7 +25,7 @@ export default function RootLayout() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="flex-1 flex flex-col"
           >
             <Outlet />

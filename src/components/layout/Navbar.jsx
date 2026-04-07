@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router";
 import { motion } from "framer-motion";
 import { siteName, whatsappUrl } from "../../data/siteConfig";
 import logo from "../../assets/icons/logo.png";
+import { LotusIcon } from "../ui/BotanicalIcons";
 import Button from "../ui/Button";
 import {
   useMotionSafe,
@@ -30,20 +31,24 @@ export default function Navbar() {
       animate="visible"
       variants={animate ? fadeDown : noMotion}
       transition={defaultTransition}
-      className={`sticky top-0 z-50 flex flex-wrap items-center justify-between gap-4 px-[clamp(20px,6vw,80px)] py-4 transition-all duration-300 ${
+      className={`sticky top-0 z-50 flex flex-wrap items-center justify-between gap-4 px-[clamp(20px,6vw,80px)] py-4 transition-all duration-500 ${
         scrolled
-          ? "bg-white/95 shadow-md backdrop-blur-sm"
-          : "bg-white/50 backdrop-blur-md"
+          ? "bg-soul-cream/80 shadow-md backdrop-blur-lg"
+          : "bg-soul-cream/50 backdrop-blur-md"
       }`}
+      style={{
+        backdropFilter: scrolled ? "blur(8px)" : "blur(4px)",
+      }}
     >
-      {/* Brand */}
+      {/* Brand with lotus */}
       <Link
         to="/"
-        className="flex items-center gap-4 hover:opacity-90 transition"
+        className="flex items-center gap-3 hover:opacity-90 transition-all duration-500"
       >
         <img src={logo} alt="Logo icon" className="h-12 w-12" />
+        <LotusIcon className="text-soul-sage" size={28} />
         <div>
-          <p className="font-heading text-xl leading-tight m-0 text-brand-dark">
+          <p className="font-soul text-xl leading-tight m-0 text-bg-deep font-semibold">
             {siteName}
           </p>
         </div>
@@ -51,7 +56,7 @@ export default function Navbar() {
 
       {/* Mobile menu button */}
       <button
-        className="lg:hidden p-2 text-brand-dark"
+        className="lg:hidden p-2 text-bg-deep"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label={menuOpen ? "Close menu" : "Open menu"}
         aria-expanded={menuOpen}
@@ -76,34 +81,34 @@ export default function Navbar() {
       <div
         className={`flex items-center gap-6 text-sm lg:text-base font-medium tracking-[0.05em] ${
           menuOpen
-            ? "flex-col w-full items-start pt-4 border-t border-brand-sage/20 lg:flex-row lg:w-auto lg:items-center lg:border-0 lg:pt-0"
+            ? "flex-col w-full items-start pt-4 border-t border-soul-sage/20 lg:flex-row lg:w-auto lg:items-center lg:border-0 lg:pt-0"
             : "hidden lg:flex"
         }`}
       >
         <a
           href={isHome ? "#expertise" : "/#expertise"}
-          className="border-b-2 border-transparent transition hover:border-brand-coral pb-1 text-brand-dark"
+          className="relative border-b-2 border-transparent transition-all duration-500 hover:border-soul-sage pb-1 text-bg-deep"
           onClick={() => setMenuOpen(false)}
         >
           Expertise
         </a>
         <a
           href={isHome ? "#testimonials" : "/#testimonials"}
-          className="border-b-2 border-transparent transition hover:border-brand-coral pb-1 text-brand-dark"
+          className="relative border-b-2 border-transparent transition-all duration-500 hover:border-soul-sage pb-1 text-bg-deep"
           onClick={() => setMenuOpen(false)}
         >
           Stories
         </a>
         <Link
           to="/free-resources"
-          className="border-b-2 border-transparent transition hover:border-brand-coral pb-1 text-brand-dark"
+          className="relative border-b-2 border-transparent transition-all duration-500 hover:border-soul-sage pb-1 text-bg-deep"
           onClick={() => setMenuOpen(false)}
         >
           Free Resources
         </Link>
         <a
           href={isHome ? "#contact" : "/#contact"}
-          className="border-b-2 border-transparent transition hover:border-brand-coral pb-1 text-brand-dark"
+          className="relative border-b-2 border-transparent transition-all duration-500 hover:border-soul-sage pb-1 text-bg-deep"
           onClick={() => setMenuOpen(false)}
         >
           Contact
@@ -113,7 +118,7 @@ export default function Navbar() {
           href={whatsappUrl}
           className="text-sm lg:text-base"
         >
-          Book on WhatsApp
+          Book a WhatsApp
         </Button>
       </div>
     </motion.nav>

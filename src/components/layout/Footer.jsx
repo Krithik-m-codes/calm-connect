@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router";
 import { siteName, email, phone, hours, address } from "../../data/siteConfig";
+import { LotusWatermark } from "../ui/BotanicalIcons";
 import {
   useMotionSafe,
   fadeUp,
@@ -20,55 +21,83 @@ export default function Footer() {
       variants={
         animate ? { visible: { transition: { staggerChildren: 0.1 } } } : {}
       }
-      className="grid grid-cols-1 gap-6 bg-brand-dark/90 px-[clamp(20px,6vw,80px)] py-10 pb-14 text-brand-white sm:grid-cols-2 lg:grid-cols-4"
+      className="relative overflow-hidden px-[clamp(20px,6vw,80px)] py-12 pb-8"
+      style={{ backgroundColor: "var(--color-bg-deep)" }}
     >
-      <motion.div variants={v} transition={defaultTransition}>
-        <h3 className="font-heading text-lg mt-0">{siteName}</h3>
-      </motion.div>
+      {/* Lotus watermark */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+        <LotusWatermark className="text-white" />
+      </div>
 
-      <motion.div variants={v} transition={defaultTransition}>
-        <p className="text-sm">{email}</p>
-        <p className="text-sm">{phone}</p>
-      </motion.div>
-
-      <motion.div variants={v} transition={defaultTransition}>
-        <p className="text-sm">{hours}</p>
-        <p className="text-sm">{address}</p>
-      </motion.div>
-
-      <motion.div
-        variants={v}
-        transition={defaultTransition}
-        className="space-y-3 flex flex-col items-start"
-      >
-        <div className="flex gap-4">
-          <Link
-            to="/privacy"
-            className="text-sm underline underline-offset-2 hover:text-brand-coral transition"
-          >
-            Privacy
-          </Link>
-          <Link
-            to="/terms"
-            className="text-sm underline underline-offset-2 hover:text-brand-coral transition"
-          >
-            Terms
-          </Link>
-          <Link
-            to="/support"
-            className="text-sm underline underline-offset-2 hover:text-brand-coral transition"
-          >
-            Support
-          </Link>
-        </div>
-        <p className="text-xs text-brand-white/60 leading-relaxed mt-2">
-          The information provided shall strictly be used for the purpose of
-          counselling and therapy and not otherwise.
+      {/* Tagline */}
+      <motion.div variants={v} transition={defaultTransition} className="relative z-10 text-center mb-10">
+        <p className="font-soul italic text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed" style={{ color: "var(--color-soul-cream)" }}>
+          "Healing is not just about reducing symptoms — it's about rediscovering joy, balance, and strength."
         </p>
-        <span className="inline-block rounded-full bg-brand-white/15 px-3 py-1 text-xs font-medium">
-          DPDPA Compliant — Your Privacy is Guaranteed.
-        </span>
       </motion.div>
+
+      <div className="relative z-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 text-white/90">
+        <motion.div variants={v} transition={defaultTransition}>
+          <h3 className="font-soul text-lg mt-0" style={{ color: "var(--color-soul-cream)" }}>{siteName}</h3>
+        </motion.div>
+
+        <motion.div variants={v} transition={defaultTransition}>
+          <p className="text-sm opacity-80">{email}</p>
+          <p className="text-sm opacity-80">{phone}</p>
+        </motion.div>
+
+        <motion.div variants={v} transition={defaultTransition}>
+          <p className="text-sm opacity-80">{hours}</p>
+          <p className="text-sm opacity-80">{address}</p>
+        </motion.div>
+
+        <motion.div
+          variants={v}
+          transition={defaultTransition}
+          className="space-y-3 flex flex-col items-start"
+        >
+          <div className="flex gap-4">
+            <Link
+              to="/privacy"
+              className="text-sm underline underline-offset-2 transition-colors duration-500 hover:text-soul-gold"
+              style={{ color: "var(--color-soul-cream)" }}
+            >
+              Privacy
+            </Link>
+            <Link
+              to="/terms"
+              className="text-sm underline underline-offset-2 transition-colors duration-500 hover:text-soul-gold"
+              style={{ color: "var(--color-soul-cream)" }}
+            >
+              Terms
+            </Link>
+            <Link
+              to="/support"
+              className="text-sm underline underline-offset-2 transition-colors duration-500 hover:text-soul-gold"
+              style={{ color: "var(--color-soul-cream)" }}
+            >
+              Support
+            </Link>
+          </div>
+          <p className="text-xs leading-relaxed mt-2" style={{ color: "rgba(250, 246, 240, 0.5)" }}>
+            The information provided shall strictly be used for the purpose of
+            counselling and therapy and not otherwise.
+          </p>
+          <span
+            className="inline-block rounded-full px-3 py-1 text-xs font-medium"
+            style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--color-soul-cream)" }}
+          >
+            DPDPA Compliant — Your Privacy is Guaranteed.
+          </span>
+        </motion.div>
+      </div>
+
+      {/* Gold line above copyright */}
+      <div className="relative z-10 mt-10 pt-4" style={{ borderTop: "1px solid var(--color-soul-gold)" }}>
+        <p className="text-center text-xs" style={{ color: "rgba(250, 246, 240, 0.4)" }}>
+          © {new Date().getFullYear()} {siteName}. All rights reserved.
+        </p>
+      </div>
     </motion.footer>
   );
 }

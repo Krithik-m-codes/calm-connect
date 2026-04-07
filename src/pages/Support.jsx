@@ -1,10 +1,15 @@
 import { motion } from "framer-motion";
 import { fadeUp, defaultTransition } from "../utils/motion";
 import Button from "../components/ui/Button";
+import SEOHead from "../components/ui/SEOHead";
 
 export default function Support() {
   return (
     <div className="pt-24 pb-20 px-[clamp(20px,6vw,80px)] min-h-[60vh] max-w-4xl mx-auto flex items-center justify-center">
+      <SEOHead
+        title="Support"
+        description="Need help? Contact KalmKonnect for therapy session inquiries, scheduling, or emergency mental health support. Available Mon–Sat, 9 AM – 7 PM."
+      />
       <motion.div
         initial="hidden"
         animate="visible"

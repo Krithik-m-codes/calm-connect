@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
 import { fadeUp, defaultTransition } from "../utils/motion";
+import SEOHead from "../components/ui/SEOHead";
 
 export default function TermsOfService() {
   return (
     <div className="pt-24 pb-20 px-[clamp(20px,6vw,80px)] min-h-[60vh] max-w-4xl mx-auto">
+      <SEOHead
+        title="Terms of Service"
+        description="Read the terms and conditions governing the use of KalmKonnect's therapy, counselling, and digital wellbeing services."
+      />
       <motion.div
         initial="hidden"
         animate="visible"

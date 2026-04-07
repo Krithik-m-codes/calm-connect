@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { startTodayBody, whatsappUrl } from "../data/siteConfig";
+import { whatsappUrl } from "../data/siteConfig";
 import Button from "../components/ui/Button";
+import { LotusIcon } from "../components/ui/BotanicalIcons";
 import {
   useMotionSafe,
   fadeUp,
@@ -21,33 +22,44 @@ export default function StartToday() {
         variants={
           animate ? { visible: { transition: { staggerChildren: 0.15 } } } : {}
         }
-        className="w-full relative overflow-hidden rounded-[2.5rem] bg-linear-to-b from-brand-sage/20 to-brand-mint/40 border border-white/50 px-6 py-20 text-center shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] backdrop-blur-xs"
+        className="w-full relative overflow-hidden rounded-[2.5rem] px-6 py-20 text-center"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, rgba(232, 196, 184, 0.3), var(--color-soul-cream) 70%)",
+        }}
       >
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-brand-sun/30 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-brand-mint/50 rounded-full blur-[100px] pointer-events-none" />
+        {/* Floating lotus SVGs */}
+        <div className="absolute top-10 left-10 text-soul-lotus/20 animate-float-gentle pointer-events-none">
+          <LotusIcon size={80} />
+        </div>
+        <div className="absolute bottom-10 right-10 text-soul-sage/20 animate-float-gentle pointer-events-none" style={{ animationDelay: "3s" }}>
+          <LotusIcon size={60} />
+        </div>
 
         <div className="max-w-3xl mx-auto relative z-10">
           <motion.h2
             variants={v}
             transition={defaultTransition}
-            className="text-4xl md:text-5xl lg:text-7xl font-serif text-brand-dark tracking-tight mb-6"
+            className="font-soul italic text-4xl md:text-5xl lg:text-7xl text-bg-deep tracking-tight mb-6"
           >
-            Start Today
+            Your healing journey begins with one step.
           </motion.h2>
 
           <motion.p
             variants={v}
             transition={defaultTransition}
-            className="text-lg md:text-xl text-brand-charcoal/80 mb-10 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed font-science"
+            style={{ color: "#5a5a5a" }}
           >
-            {startTodayBody}
+            Book a free 15-minute consultation — no pressure, just presence.
           </motion.p>
 
           <motion.div variants={v} transition={defaultTransition}>
             <Button
               variant="primary"
               href={whatsappUrl}
-              className={`text-base lg:text-lg font-medium px-12 py-5 rounded-full shadow-md hover:shadow-lg transition-transform hover:-translate-y-0.5 ${animate ? "animate-pulse-soft" : ""}`}
+              leafIcon
+              className={`text-base lg:text-lg font-medium px-12 py-5 rounded-full shadow-md hover:shadow-lg transition-all duration-500 hover:-translate-y-0.5 ${animate ? "animate-pulse-soft" : ""}`}
             >
               Book Your Session
             </Button>

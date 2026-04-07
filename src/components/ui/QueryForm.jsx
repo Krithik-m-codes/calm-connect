@@ -17,14 +17,18 @@ export default function QueryForm({ className = "" }) {
 
   return (
     <div
-      className={`bg-white rounded-4xl p-8 lg:p-10 shadow-[0_20px_60px_rgba(24,45,41,0.06)] border border-brand-dark/5 ${className}`}
+      className={`rounded-[2rem] p-8 lg:p-10 border border-soul-sage/15 ${className}`}
+      style={{
+        backgroundColor: "var(--color-soul-cream)",
+        filter: "drop-shadow(0 20px 60px rgba(45, 74, 53, 0.06))",
+      }}
     >
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
         <div className="lg:w-1/3 space-y-3 text-center lg:text-left">
-          <h3 className="font-heading text-3xl lg:text-4xl text-brand-dark">
+          <h3 className="font-soul text-3xl lg:text-4xl text-bg-deep">
             Let's Connect
           </h3>
-          <p className="text-base text-brand-muted">
+          <p className="text-base font-science" style={{ color: "#6b6b6b" }}>
             Take the first step towards healing. Request a free consultation
             today.
           </p>
@@ -32,7 +36,7 @@ export default function QueryForm({ className = "" }) {
 
         <div className="w-full lg:w-2/3">
           {status === "success" ? (
-            <div className="bg-brand-mint/30 text-brand-dark p-6 rounded-2xl text-center font-medium h-full flex items-center justify-center">
+            <div className="bg-soul-sage/15 text-bg-deep p-6 rounded-2xl text-center font-medium h-full flex items-center justify-center font-bridge">
               Thank you! We'll be in touch soon.
             </div>
           ) : (
@@ -49,7 +53,11 @@ export default function QueryForm({ className = "" }) {
                   id="name"
                   required
                   placeholder="Your Name"
-                  className="w-full px-5 py-4 rounded-xl bg-brand-sand/30 border border-brand-dark/10 focus:outline-none focus:ring-2 focus:ring-brand-coral/50 transition-all text-brand-dark placeholder:text-brand-muted/70"
+                  className="w-full px-5 py-4 rounded-xl border border-soul-sage/20 focus:outline-none focus:ring-2 focus:ring-soul-sage/40 transition-all duration-500 placeholder:opacity-50 font-science"
+                  style={{
+                    backgroundColor: "white",
+                    color: "var(--color-bg-deep)",
+                  }}
                 />
               </div>
               <div>
@@ -61,7 +69,11 @@ export default function QueryForm({ className = "" }) {
                   id="email"
                   required
                   placeholder="Email or Phone Number"
-                  className="w-full px-5 py-4 rounded-xl bg-brand-sand/30 border border-brand-dark/10 focus:outline-none focus:ring-2 focus:ring-brand-coral/50 transition-all text-brand-dark placeholder:text-brand-muted/70"
+                  className="w-full px-5 py-4 rounded-xl border border-soul-sage/20 focus:outline-none focus:ring-2 focus:ring-soul-sage/40 transition-all duration-500 placeholder:opacity-50 font-science"
+                  style={{
+                    backgroundColor: "white",
+                    color: "var(--color-bg-deep)",
+                  }}
                 />
               </div>
               <div className="md:col-span-2">
@@ -73,7 +85,11 @@ export default function QueryForm({ className = "" }) {
                   required
                   rows={2}
                   placeholder="How can I help you today?"
-                  className="w-full px-5 py-4 rounded-xl bg-brand-sand/30 border border-brand-dark/10 focus:outline-none focus:ring-2 focus:ring-brand-coral/50 transition-all text-brand-dark placeholder:text-brand-muted/70 resize-none"
+                  className="w-full px-5 py-4 rounded-xl border border-soul-sage/20 focus:outline-none focus:ring-2 focus:ring-soul-sage/40 transition-all duration-500 resize-none placeholder:opacity-50 font-science"
+                  style={{
+                    backgroundColor: "white",
+                    color: "var(--color-bg-deep)",
+                  }}
                 ></textarea>
               </div>
               <div className="md:col-span-2 mt-2">
