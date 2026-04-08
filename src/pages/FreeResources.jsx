@@ -224,20 +224,20 @@ export default function FreeResources() {
               transition={{ duration: 0.4 }}
             >
               {/* Resources Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 mb-10 lg:mb-12">
+              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 mb-8 sm:mb-10 lg:mb-12">
                 {pdfList.map((pdf) => (
                   <div
                     key={pdf.id}
-                    className={`bg-white rounded-3xl p-5 lg:p-6 shadow-sm border transition-all duration-300 hover:shadow-[0_15px_30px_rgba(24,45,41,0.06)] cursor-pointer flex flex-col h-full ${
+                    className={`bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-5 lg:p-6 shadow-sm border transition-all duration-300 hover:shadow-[0_15px_30px_rgba(24,45,41,0.06)] cursor-pointer flex flex-col h-full min-h-[220px] sm:min-h-[260px] ${
                       selectedPdf?.id === pdf.id
                         ? "border-brand-coral/50 ring-2 ring-brand-coral/10"
                         : "border-brand-dark/10"
                     }`}
                     onClick={(e) => handleSelect(e, pdf)}
                   >
-                    <div className="bg-brand-mint/30 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-brand-dark flex-shrink-0">
+                    <div className="bg-brand-mint/30 w-11 h-11 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 text-brand-dark shrink-0">
                       <svg
-                        className="w-8 h-8"
+                        className="w-5 h-5 sm:w-8 sm:h-8"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -250,21 +250,21 @@ export default function FreeResources() {
                         />
                       </svg>
                     </div>
-                    <h3 className="font-heading text-xl lg:text-2xl mb-3 text-brand-dark leading-snug flex-grow">
+                    <h3 className="font-heading text-base sm:text-xl lg:text-2xl mb-2 sm:mb-3 text-brand-dark leading-snug grow">
                       {pdf.title}
                     </h3>
-                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-brand-dark/5">
-                      <span className="text-sm font-semibold text-brand-coral uppercase tracking-wide">
+                    <div className="flex items-center justify-between mt-auto pt-3 sm:pt-4 border-t border-brand-dark/5">
+                      <span className="text-[11px] sm:text-sm font-semibold text-brand-coral uppercase tracking-wide">
                         Read Now
                       </span>
                       <Button
                         type="button"
                         variant="secondary"
-                        className="py-2.5 px-4 text-sm rounded-xl"
+                        className="py-2 px-2.5 sm:py-2.5 sm:px-4 text-xs sm:text-sm rounded-lg sm:rounded-xl"
                         onClick={(e) => handleRequestDownload(e, pdf)}
                       >
                         <svg
-                          className="w-4 h-4"
+                          className="w-3.5 h-3.5 sm:w-4 sm:h-4"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"

@@ -26,7 +26,7 @@ export default function Footer() {
     >
       {/* Lotus watermark */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-        <LotusWatermark className="text-white" />
+        <LotusWatermark className="text-white/50" />
       </div>
 
       {/* Tagline */}
