@@ -46,7 +46,6 @@ export default function Navbar() {
         className="flex items-center gap-3 hover:opacity-90 transition-all duration-500"
       >
         <img src={logo} alt="Logo icon" className="h-12 w-12" />
-        <LotusIcon className="text-soul-sage" size={28} />
         <div>
           <p className="font-soul text-xl leading-tight m-0 text-bg-deep font-semibold">
             {siteName}

@@ -58,7 +58,10 @@ export default function About() {
               {hero.whomIHelpLabel}
             </h2>
           </div>
-          <p className="text-lg lg:text-xl leading-[1.9] font-bridge" style={{ color: "#4a4a4a" }}>
+          <p
+            className="flex-1 flex items-center justify-center text-lg lg:text-xl text-center leading-[1.9] font-bridge"
+            style={{ color: "#4a4a4a" }}
+          >
             {hero.whomIHelpBody}
           </p>
         </motion.div>
@@ -87,11 +90,16 @@ export default function About() {
                 </div>
 
                 {/* Step content */}
-                <div className={`pb-8 ${index === journeySteps.length - 1 ? "pb-0" : ""}`}>
+                <div
+                  className={`pb-8 ${index === journeySteps.length - 1 ? "pb-0" : ""}`}
+                >
                   <h4 className="font-display text-lg lg:text-xl font-semibold text-bg-deep mb-1">
                     {step.title}
                   </h4>
-                  <p className="text-sm lg:text-base leading-relaxed font-science" style={{ color: "#5a5a5a" }}>
+                  <p
+                    className="text-sm lg:text-base leading-relaxed font-science"
+                    style={{ color: "#5a5a5a" }}
+                  >
                     {step.description}
                   </p>
                 </div>

@@ -50,12 +50,12 @@ export default function Adolescence() {
                 alt="Calming nature pathway"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />
-              <div
+              {/* <div
                 className="absolute inset-0"
                 style={{
                   background: "linear-gradient(to top, rgba(45, 74, 53, 0.4), transparent)",
                 }}
-              />
+              /> */}
             </div>
 
             {/* Floating badge */}
