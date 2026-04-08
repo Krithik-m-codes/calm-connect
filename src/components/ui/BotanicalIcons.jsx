@@ -1,6 +1,10 @@
-// Reusable botanical & technical SVG icons for the Science & Soul theme
-// Design Language: Dual-tone line art (1.5px stroke) + 15% opacity accent fills
-
+// ─── Core Icons ───────────────────────────────────────────────────────────────
+ 
+/**
+ * LotusIcon — 5-petal lotus opening from a common base, with water ripple
+ * and a seedpod center. Each petal fans outward with its own stagger for the
+ * bloom animation. Outer petals are lower/wider; center petal stands tallest.
+ */
 export function LotusIcon({ className = "", size = 24 }) {
   return (
     <svg
@@ -11,41 +15,90 @@ export function LotusIcon({ className = "", size = 24 }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      {/* Accent Background Petal */}
+      {/* Left outer petal — widest spread, lowest angle */}
       <path
-        d="M12 22C12 22 5 15 5 9C5 5.5 8 3 12 2C16 3 19 5.5 19 9C19 15 12 22 12 22Z"
+        d="M12 17C9 15 5 13 3 11C4 9 8 11 12 17Z"
+        fill="currentColor"
+        fillOpacity="0.1"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        style={{ transformBox: "fill-box", transformOrigin: "center bottom" }}
+        className="lotus-petal lotus-petal-1"
+      />
+ 
+      {/* Right outer petal — mirror of left outer */}
+      <path
+        d="M12 17C15 15 19 13 21 11C20 9 16 11 12 17Z"
+        fill="currentColor"
+        fillOpacity="0.1"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        style={{ transformBox: "fill-box", transformOrigin: "center bottom" }}
+        className="lotus-petal lotus-petal-2"
+      />
+ 
+      {/* Left inner petal — angled ~35° from center */}
+      <path
+        d="M12 17C10 14 7 11 5 7C7.5 5.5 10 10 12 17Z"
         fill="currentColor"
         fillOpacity="0.15"
-      />
-      {/* Central Geometry */}
-      <path
-        d="M12 22C12 22 6 16 6 10C6 6.5 9 4 12 2C15 4 18 6.5 18 10C18 16 12 22 12 22Z"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
+        style={{ transformBox: "fill-box", transformOrigin: "center bottom" }}
+        className="lotus-petal lotus-petal-3"
       />
-      {/* Floating Side Petals */}
+ 
+      {/* Right inner petal — mirror of left inner */}
       <path
-        d="M7 13C4 11.5 2 9 2 6.5C2 5 3.5 4 5 4C7.5 4 10.5 6 10.5 6"
+        d="M12 17C14 14 17 11 19 7C16.5 5.5 14 10 12 17Z"
+        fill="currentColor"
+        fillOpacity="0.15"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
+        style={{ transformBox: "fill-box", transformOrigin: "center bottom" }}
+        className="lotus-petal lotus-petal-4"
       />
+ 
+      {/* Center petal — tallest, most upright, front layer */}
       <path
-        d="M17 13C20 11.5 22 9 22 6.5C22 5 20.5 4 19 4C16.5 4 13.5 6 13.5 6"
+        d="M12 17C10.5 13.5 9.5 9 12 4.5C14.5 9 13.5 13.5 12 17Z"
+        fill="currentColor"
+        fillOpacity="0.22"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
+        style={{ transformBox: "fill-box", transformOrigin: "center bottom" }}
+        className="lotus-petal lotus-petal-5"
       />
-      {/* Scientific Node Core */}
-      <circle cx="12" cy="16" r="1.5" fill="currentColor" />
+ 
+      {/* Water ripple — sits below the flower base */}
+      <path
+        d="M2 20Q7 18.5 12 20Q17 21.5 22 20"
+        stroke="currentColor"
+        strokeWidth="1"
+        strokeLinecap="round"
+        opacity="0.45"
+      />
+ 
+      {/* Seedpod — solid center node */}
+      <circle cx="12" cy="17" r="1.5" fill="currentColor" />
     </svg>
   );
 }
-
+ 
+/**
+ * LeafIcon — Diagonal botanical leaf with midrib, three side veins,
+ * and a small circuit node at the center vein junction (science detail).
+ */
 export function LeafIcon({ className = "", size = 24 }) {
   return (
     <svg
@@ -56,106 +109,60 @@ export function LeafIcon({ className = "", size = 24 }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      {/* Sharp Leaf Silhouette */}
+      {/* Leaf body — diagonal, pointed at tip (top-right) and stem (bottom-left) */}
       <path
-        d="M21 3C21 3 20 10 15 15C10 20 3 22 3 22C3 22 4 15 9 10C14 5 21 3 21 3Z"
+        d="M20.5 3.5C18 5 12 9.5 7 14.5C5 16.5 3.5 19 3.5 20.5C5 19 7.5 17.5 10 15C14.5 10.5 19 5.5 20.5 3.5Z"
         fill="currentColor"
         fillOpacity="0.15"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
+        className="leaf-body"
       />
-      {/* Geometric Vein (Circuit/Node style) */}
+ 
+      {/* Midrib — central vein from stem to tip */}
       <path
-        d="M3 22L11 14M15 10L12 13"
+        d="M3.5 20.5L19.5 4.5"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
-        strokeLinejoin="round"
       />
-      <circle cx="13.5" cy="11.5" r="1.5" fill="currentColor" />
-    </svg>
-  );
-}
-
-export function LeafCluster({ className = "" }) {
-  // A structured, 3-point botanical cluster
-  return (
-    <svg
-      className={className}
-      width="120"
-      height="100"
-      viewBox="0 0 120 100"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+ 
+      {/* Side veins — branching off the midrib */}
       <path
-        d="M100 20C100 20 85 45 60 65C35 85 10 90 10 90C10 90 25 65 50 45C75 25 100 20 100 20Z"
-        fill="currentColor"
-        fillOpacity="0.1"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <path d="M10 90L55 50" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      <path
-        d="M70 30C70 30 55 40 40 55C25 70 15 85 15 85C15 85 30 75 45 60C60 45 70 30 70 30Z"
-        fill="currentColor"
-        fillOpacity="0.2"
-      />
-      <path
-        d="M90 55C90 55 75 65 60 75C45 85 30 95 30 95C30 95 45 85 60 75C75 65 90 55 90 55Z"
-        fill="currentColor"
-        fillOpacity="0.05"
+        d="M8 16Q10.5 14.5 12.5 12.5"
         stroke="currentColor"
         strokeWidth="1"
-        strokeDasharray="3 3"
-      />
-    </svg>
-  );
-}
-
-export function BotanicalDivider({ className = "" }) {
-  return (
-    <div className={`flex items-center justify-center gap-4 ${className}`}>
-      <div className="h-px w-16 bg-gradient-to-r from-transparent to-soul-sage/50" />
-      <LotusIcon className="text-soul-sage" size={16} />
-      <div className="h-px w-16 bg-gradient-to-l from-transparent to-soul-sage/50" />
-    </div>
-  );
-}
-
-export function LotusWatermark({ className = "" }) {
-  // Sacred geometry approach for backgrounds
-  return (
-    <svg
-      className={className}
-      width="300"
-      height="300"
-      viewBox="0 0 100 100"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="0.2" opacity="0.2" />
-      <circle cx="50" cy="50" r="30" stroke="currentColor" strokeWidth="0.2" opacity="0.4" />
-      <path
-        d="M50 5 L56 38 L88 44 L56 50 L50 83 L44 50 L12 44 L44 38 Z"
-        stroke="currentColor"
-        strokeWidth="0.5"
-        fill="currentColor"
-        fillOpacity="0.03"
+        strokeLinecap="round"
+        opacity="0.6"
       />
       <path
-        d="M50 18 L54 41 L76 45 L54 49 L50 72 L46 49 L24 45 L46 41 Z"
+        d="M12 12Q14 10.5 15.5 9"
         stroke="currentColor"
-        strokeWidth="0.2"
+        strokeWidth="1"
+        strokeLinecap="round"
+        opacity="0.6"
+      />
+      <path
+        d="M15.5 8.5Q17 7 18 6"
+        stroke="currentColor"
+        strokeWidth="1"
+        strokeLinecap="round"
         opacity="0.5"
       />
+ 
+      {/* Circuit node — the "Science" accent at vein junction */}
+      <circle cx="12" cy="12" r="1.4" fill="currentColor" />
     </svg>
   );
 }
-
+ 
+/**
+ * WaveIcon — Three harmonic sine waves with scrolling flow animation.
+ * The primary wave is full opacity; secondary and tertiary are dimmed.
+ * Apply className="wave-scroll" or use the CSS animation block below.
+ */
 export function WaveIcon({ className = "", size = 24 }) {
   return (
     <svg
@@ -165,32 +172,54 @@ export function WaveIcon({ className = "", size = 24 }) {
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      style={{ overflow: "hidden" }}
     >
-      {/* Harmonic Sine Waves */}
-      <path
-        d="M3 12C6 7 8 7 12 12C16 17 18 17 21 12"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-      <path
-        d="M3 17C6 12 8 12 12 17C16 22 18 22 21 17"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        opacity="0.4"
-      />
-      <path
-        d="M3 7C6 2 8 2 12 7C16 12 18 12 21 7"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        opacity="0.2"
-      />
+      <clipPath id="wave-clip">
+        <rect x="1" y="0" width="22" height="24" />
+      </clipPath>
+ 
+      <g clipPath="url(#wave-clip)">
+        {/* Animate this group for scrolling effect */}
+        <g className="wave-scroll-group">
+          {/* Primary wave */}
+          <path
+            d="M-6 12C-3 7 -1 7 3 12C7 17 9 17 12 12C15 7 17 7 21 12C24 17 26 17 30 12"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            fill="none"
+          />
+ 
+          {/* Secondary wave — lower, lighter */}
+          <path
+            d="M-6 16C-3 11 -1 11 3 16C7 21 9 21 12 16C15 11 17 11 21 16C24 21 26 21 30 16"
+            stroke="currentColor"
+            strokeWidth="1.2"
+            strokeLinecap="round"
+            fill="none"
+            opacity="0.4"
+          />
+ 
+          {/* Tertiary wave — upper, faintest */}
+          <path
+            d="M-6 8C-3 3 -1 3 3 8C7 13 9 13 12 8C15 3 17 3 21 8C24 13 26 13 30 8"
+            stroke="currentColor"
+            strokeWidth="1"
+            strokeLinecap="round"
+            fill="none"
+            opacity="0.2"
+          />
+        </g>
+      </g>
     </svg>
   );
 }
-
+ 
+/**
+ * FlameIcon — Organic flame with an outer shell and inner core shape.
+ * The outer flame slightly flickers (use `.flame-dance` animation),
+ * and the inner core flickers at a different phase for a natural look.
+ */
 export function FlameIcon({ className = "", size = 24 }) {
   return (
     <svg
@@ -201,29 +230,46 @@ export function FlameIcon({ className = "", size = 24 }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
+      {/* Outer flame body */}
       <path
-        d="M12 22C16.418 22 20 18.418 20 14C20 9.582 12 2 12 2C12 2 4 9.582 4 14C4 18.418 7.582 22 12 22Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M12 17C13.657 17 15 15.657 15 14C15 12.343 12 8 12 8C12 8 9 12.343 9 14C9 15.657 10.343 17 12 17Z"
+        d="M12 22C16.4 22 20 18.4 20 14C20 9 14 4 12 2C10 6 8.5 8 7 10C5.5 12 4 13 4 14C4 18.4 7.6 22 12 22Z"
         fill="currentColor"
-        fillOpacity="0.2"
+        fillOpacity="0.12"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
+        style={{ transformBox: "fill-box", transformOrigin: "center bottom" }}
+        className="flame-outer"
       />
+ 
+      {/* Inner flame core */}
+      <path
+        d="M12 18C14.2 18 16 16.2 16 14C16 12 13.5 9.5 12 8C10.5 10 8 12 8 14C8 16.2 9.8 18 12 18Z"
+        fill="currentColor"
+        fillOpacity="0.25"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        style={{ transformBox: "fill-box", transformOrigin: "center bottom" }}
+        className="flame-inner"
+      />
+ 
+      {/* Tip gleam — subtle accent dot */}
+      <circle cx="12" cy="5.5" r="0.8" fill="currentColor" opacity="0.4" />
     </svg>
   );
 }
-
+ 
+/**
+ * BrainLotusIcon — Split brain representing the duality of Science & Soul.
+ * Left hemisphere: organic lotus arc (soul/intuition)
+ * Right hemisphere: circuit nodes connected by lines (science/analysis)
+ * A dashed vertical line divides the two halves.
+ */
 export function BrainLotusIcon({ className = "", size = 24 }) {
   return (
-    // Left hemisphere is scientific nodes, right hemisphere is an organic lotus petal
     <svg
       className={className}
       width={size}
@@ -232,30 +278,75 @@ export function BrainLotusIcon({ className = "", size = 24 }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
+      {/* Brain outline — simplified bilateral silhouette */}
       <path
-        d="M12 22V5"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeDasharray="2 2"
-      />
-      {/* Organic Side (Soul) */}
-      <path
-        d="M12 22C16 20 21 16 21 11C21 6 16 3 12 3"
+        d="M12 20.5C8 20.5 4 17.5 4 13.5C4 10 6 7 8.5 6C9 5.5 9.5 4.5 10.5 4C11 3.8 12 3.8 12 3.8C12 3.8 13 3.8 13.5 4C14.5 4.5 15 5.5 15.5 6C18 7 20 10 20 13.5C20 17.5 16 20.5 12 20.5Z"
         fill="currentColor"
-        fillOpacity="0.15"
+        fillOpacity="0.06"
         stroke="currentColor"
         strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
-      {/* Node Side (Science) */}
-      <path d="M12 3C8 3 3 6 3 11C3 16 8 20 12 22" stroke="currentColor" strokeWidth="1.5" />
-      <circle cx="6" cy="11" r="1.5" fill="currentColor" />
-      <circle cx="9" cy="7" r="1.5" fill="currentColor" />
-      <circle cx="8" cy="16" r="1.5" fill="currentColor" />
-      <path d="M12 7H9L6 11L8 16H12" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+ 
+      {/* Dashed divider — the mind/body split */}
+      <line
+        x1="12" y1="3.8"
+        x2="12" y2="20.5"
+        stroke="currentColor"
+        strokeWidth="1"
+        strokeDasharray="2 2"
+        opacity="0.5"
+      />
+ 
+      {/* LEFT = Soul — organic lotus petal suggestion */}
+      <path
+        d="M12 11C10 10 7.5 11 7.5 13C7.5 15 10 16 12 15.5"
+        fill="currentColor"
+        fillOpacity="0.12"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinecap="round"
+      />
+ 
+      {/* RIGHT = Science — three nodes in a triangle circuit */}
+      <circle
+        cx="16" cy="8.5" r="1.5"
+        fill="currentColor"
+        style={{ transformBox: "fill-box", transformOrigin: "center" }}
+        className="brain-node brain-node-1"
+      />
+      <circle
+        cx="17.5" cy="13" r="1.5"
+        fill="currentColor"
+        style={{ transformBox: "fill-box", transformOrigin: "center" }}
+        className="brain-node brain-node-2"
+      />
+      <circle
+        cx="15.5" cy="17.5" r="1.5"
+        fill="currentColor"
+        style={{ transformBox: "fill-box", transformOrigin: "center" }}
+        className="brain-node brain-node-3"
+      />
+ 
+      {/* Circuit connections */}
+      <path
+        d="M16 8.5L17.5 13L15.5 17.5"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+        opacity="0.7"
+      />
     </svg>
   );
 }
-
+ 
+/**
+ * ScreenLeafIcon — A monitor with a botanical leaf growing from the screen,
+ * symbolising digital wellness / tech + nature integration.
+ */
 export function ScreenLeafIcon({ className = "", size = 24 }) {
   return (
     <svg
@@ -266,29 +357,49 @@ export function ScreenLeafIcon({ className = "", size = 24 }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
+      {/* Monitor frame */}
       <rect
-        x="3"
-        y="4"
-        width="18"
-        height="12"
-        rx="2"
+        x="2" y="3"
+        width="20" height="14"
+        rx="2.5"
         stroke="currentColor"
         strokeWidth="1.5"
       />
-      <path d="M8 20H16 M12 16V20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      {/* Botanical code rising from the screen */}
+ 
+      {/* Stand and base */}
       <path
-        d="M12 14C14 14 16 12 16 9.5C16 7 14 7 14 7C12 7 12 9.5 12 9.5C10 9.5 8 12 8 14C8 16 10 16 10 16C12 16 12 14 12 14Z"
-        fill="currentColor"
-        fillOpacity="0.2"
+        d="M8 21H16M12 17V21"
         stroke="currentColor"
         strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+ 
+      {/* Leaf growing from screen interior */}
+      <path
+        d="M12 15C12 15 15 13 15 10C15 7.5 13 7 13 7C11 7 11 9.5 11 9.5C9 9.5 7 12 8 14C9 16 12 15 12 15Z"
+        fill="currentColor"
+        fillOpacity="0.18"
+        stroke="currentColor"
+        strokeWidth="1.3"
         strokeLinejoin="round"
+      />
+ 
+      {/* Leaf midrib */}
+      <path
+        d="M12 15L12 9.5"
+        stroke="currentColor"
+        strokeWidth="1"
+        strokeLinecap="round"
+        opacity="0.6"
       />
     </svg>
   );
 }
-
+ 
+/**
+ * ScrollDiplomaIcon — A folded document with a wax-seal circle containing
+ * a tiny lotus motif, plus ribbon tails below the seal.
+ */
 export function ScrollDiplomaIcon({ className = "", size = 24 }) {
   return (
     <svg
@@ -299,49 +410,271 @@ export function ScrollDiplomaIcon({ className = "", size = 24 }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
+      {/* Page body */}
       <path
-        d="M14 3H6C4.895 3 4 3.895 4 5V19C4 20.105 4.895 21 6 21H18C19.105 21 20 20.105 20 19V9L14 3Z"
+        d="M14 3H6C4.9 3 4 3.9 4 5V19C4 20.1 4.9 21 6 21H18C19.1 21 20 20.1 20 19V9L14 3Z"
+        fill="currentColor"
+        fillOpacity="0.06"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinejoin="round"
       />
-      <path d="M14 3V9H20" stroke="currentColor" strokeWidth="1.5" fill="currentColor" fillOpacity="0.1" strokeLinejoin="round" />
-      {/* Minimalist Tech Ribbon Seal */}
-      <circle cx="10" cy="14" r="2.5" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="1.5" />
-      <path d="M8.5 16.5L7 20L10 18.5L13 20L11.5 16.5" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+ 
+      {/* Folded corner */}
+      <path
+        d="M14 3V9H20"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+ 
+      {/* Seal circle */}
+      <circle
+        cx="10" cy="14.5" r="3"
+        fill="currentColor"
+        fillOpacity="0.15"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+ 
+      {/* Tiny lotus inside seal */}
+      <path
+        d="M10 14.5C9.3 13.7 8.8 12.8 10 12C11.2 12.8 10.7 13.7 10 14.5Z"
+        fill="currentColor"
+        fillOpacity="0.6"
+        stroke="currentColor"
+        strokeWidth="0.8"
+      />
+ 
+      {/* Ribbon tails */}
+      <path
+        d="M8 17.5L7 21L10 19.5L13 21L12 17.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+        fill="none"
+      />
+ 
+      {/* Document text lines */}
+      <line
+        x1="14" y1="13"
+        x2="18" y2="13"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        opacity="0.4"
+      />
+      <line
+        x1="14" y1="15.5"
+        x2="17" y2="15.5"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        opacity="0.4"
+      />
     </svg>
   );
 }
-
+ 
+// ─── Composition Components ───────────────────────────────────────────────────
+ 
+/**
+ * LeafCluster — Three overlapping leaves at different depths and opacities,
+ * creating a layered botanical cluster for hero sections or dividers.
+ */
+export function LeafCluster({ className = "" }) {
+  return (
+    <svg
+      className={className}
+      width="120"
+      height="100"
+      viewBox="0 0 120 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {/* Back leaf (largest, most transparent) */}
+      <path
+        d="M100 15C100 15 82 40 58 62C34 84 8 90 8 90C8 90 26 66 50 44C74 22 100 15 100 15Z"
+        fill="currentColor"
+        fillOpacity="0.1"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8 90L55 48"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        opacity="0.7"
+      />
+      <circle cx="42" cy="60" r="2" fill="currentColor" opacity="0.5" />
+ 
+      {/* Middle leaf */}
+      <path
+        d="M72 25C72 25 55 38 40 55C25 72 14 88 14 88C14 88 30 76 45 59C60 42 72 25 72 25Z"
+        fill="currentColor"
+        fillOpacity="0.18"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M14 88L52 50"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        opacity="0.5"
+      />
+ 
+      {/* Front leaf (smallest, dashed — furthest in front, most stylised) */}
+      <path
+        d="M92 55C92 55 75 65 60 77C45 89 28 97 28 97C28 97 44 88 58 76C72 64 92 55 92 55Z"
+        fill="currentColor"
+        fillOpacity="0.07"
+        stroke="currentColor"
+        strokeWidth="1"
+        strokeDasharray="3 3"
+      />
+    </svg>
+  );
+}
+ 
+/**
+ * BotanicalDivider — Horizontal section divider with gradient lines
+ * and a small LotusIcon centred between them.
+ */
+export function BotanicalDivider({ className = "" }) {
+  return (
+    <div className={`flex items-center justify-center gap-4 ${className}`}>
+      <div className="h-px w-16 bg-gradient-to-r from-transparent to-current opacity-50" />
+      <LotusIcon size={16} />
+      <div className="h-px w-16 bg-gradient-to-l from-transparent to-current opacity-50" />
+    </div>
+  );
+}
+ 
+/**
+ * LotusWatermark — Large decorative background element with concentric rings
+ * (sacred geometry), an 8-point star, inner ring, and a small lotus at centre.
+ * Use at very low opacity (opacity-5 to opacity-10) behind page sections.
+ */
+export function LotusWatermark({ className = "" }) {
+  return (
+    <svg
+      className={className}
+      width="300"
+      height="300"
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {/* Outer ring */}
+      <circle
+        cx="50" cy="50" r="46"
+        stroke="currentColor"
+        strokeWidth="0.4"
+        opacity="0.15"
+      />
+ 
+      {/* Mid ring */}
+      <circle
+        cx="50" cy="50" r="35"
+        stroke="currentColor"
+        strokeWidth="0.4"
+        opacity="0.25"
+      />
+ 
+      {/* Inner ring */}
+      <circle
+        cx="50" cy="50" r="22"
+        stroke="currentColor"
+        strokeWidth="0.4"
+        opacity="0.35"
+      />
+ 
+      {/* 8-point star (outer) */}
+      <path
+        d="M50 4L54 42L88 46L54 50L50 88L46 50L12 46L46 42Z"
+        stroke="currentColor"
+        strokeWidth="0.8"
+        fill="currentColor"
+        fillOpacity="0.03"
+        opacity="0.6"
+      />
+ 
+      {/* 8-point star (inner, lighter) */}
+      <path
+        d="M50 18L53 42L72 45L53 48L50 72L47 48L28 45L47 42Z"
+        stroke="currentColor"
+        strokeWidth="0.5"
+        opacity="0.4"
+      />
+ 
+      {/* Central lotus */}
+      <g transform="translate(50,57) scale(1.4)">
+        {/* Outer petals */}
+        <path d="M0 0C-2.5 -2 -5 -3.5 -6.5 -6.5C-4.5 -7.5 -2 -5 0 0Z"
+          fill="currentColor" opacity="0.5"/>
+        <path d="M0 0C2.5 -2 5 -3.5 6.5 -6.5C4.5 -7.5 2 -5 0 0Z"
+          fill="currentColor" opacity="0.5"/>
+        {/* Center petal */}
+        <path d="M0 0C-1.5 -3 -1.5 -6.5 0 -9.5C1.5 -6.5 1.5 -3 0 0Z"
+          fill="currentColor" opacity="0.6"/>
+        {/* Seedpod */}
+        <circle cx="0" cy="-1" r="1.5" fill="currentColor" opacity="0.7"/>
+      </g>
+    </svg>
+  );
+}
+ 
+/**
+ * LeafBorderPattern — Full-width decorative vine border with sine-wave stem,
+ * upward leaf sprouts at peaks, and downward sprouts at valleys.
+ * Scales horizontally via preserveAspectRatio="none".
+ */
 export function LeafBorderPattern({ className = "" }) {
   return (
-    <div className={`w-full overflow-hidden h-4 ${className}`}>
-      <svg width="100%" height="16" viewBox="0 0 100 16" preserveAspectRatio="none" fill="none">
-        <pattern id="leaf-border" x="0" y="0" width="40" height="16" patternUnits="userSpaceOnUse">
-          {/* Continuous Sine Wave Vine */}
+    <div className={`w-full overflow-hidden h-5 ${className}`}>
+      <svg
+        width="100%"
+        height="20"
+        viewBox="0 0 400 20"
+        preserveAspectRatio="none"
+        fill="none"
+      >
+        <pattern
+          id="leaf-vine"
+          x="0" y="0"
+          width="40" height="20"
+          patternUnits="userSpaceOnUse"
+        >
+          {/* Sine wave vine stem */}
           <path
-            d="M0 8 Q 10 0 20 8 T 40 8"
+            d="M0 10Q10 2 20 10Q30 18 40 10"
             stroke="currentColor"
-            strokeWidth="1.5"
+            strokeWidth="1.3"
             fill="none"
+            opacity="0.6"
           />
-          {/* Sprouting geometric leaves */}
+          {/* Upward leaf at peak */}
           <path
-            d="M10 4 Q 14 2 16 6 Q 12 8 10 4Z"
+            d="M20 6Q24 2 26 7Q22 9 20 6Z"
             fill="currentColor"
-            fillOpacity="0.2"
+            fillOpacity="0.25"
             stroke="currentColor"
-            strokeWidth="1"
+            strokeWidth="0.8"
           />
+          {/* Downward leaf at valley */}
           <path
-            d="M30 12 Q 34 14 36 10 Q 32 8 30 12Z"
+            d="M40 14Q44 18 46 13Q42 11 40 14Z"
             fill="currentColor"
-            fillOpacity="0.2"
+            fillOpacity="0.15"
             stroke="currentColor"
-            strokeWidth="1"
+            strokeWidth="0.8"
           />
         </pattern>
-        <rect width="100%" height="16" fill="url(#leaf-border)" className="text-soul-sage" />
+        <rect width="100%" height="20" fill="url(#leaf-vine)" />
       </svg>
     </div>
   );
