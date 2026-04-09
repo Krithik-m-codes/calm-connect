@@ -3,20 +3,21 @@ export const services = [
     id: 1,
     title: "Counselling",
     description:
-      "Confidential online support to help you cope with everyday challenges.",
+      "Confidential online support to help you cope with everyday challenges in the best possible way.",
     bullets: [
-      "Managing stress and anxiety",
+      "Managing stress and anxiety with best-fit tools",
       "Preventing and recovering from burnout",
-      "Building emotional resilience",
+      "Building emotional resilience for your best self",
     ],
   },
   {
     id: 2,
     title: "Therapy",
-    description: "Deeper care for long-term healing and personal growth.",
+    description:
+      "Deeper care for long-term healing, best-fit recovery, and personal growth.",
     bullets: [
-      "Working through trauma and difficult experiences",
-      "Overcoming negative thought patterns",
+      "Working through trauma and difficult experiences with best-practice support",
+      "Overcoming negative thought patterns for the best outcomes",
       "Strengthening self-esteem and self-compassion",
       "Using mindfulness to support healing and balance",
     ],
@@ -24,11 +25,12 @@ export const services = [
   {
     id: 3,
     title: "Digital Wellbeing Support",
-    description: "Gentle guidance to balance your online life.",
+    description:
+      "Gentle guidance to balance your online life with best-practice habits.",
     bullets: [
-      "Coping with digital overload",
+      "Coping with digital overload in the best sustainable way",
       "Preventing screen-time burnout",
-      "Practicing mindful scrolling and healthy boundaries",
+      "Practicing mindful scrolling and healthy boundaries for best digital wellbeing",
     ],
   },
 ];

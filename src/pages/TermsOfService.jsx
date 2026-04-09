@@ -7,7 +7,7 @@ export default function TermsOfService() {
     <div className="pt-24 pb-20 px-[clamp(20px,6vw,80px)] min-h-[60vh] max-w-4xl mx-auto">
       <SEOHead
         title="Terms of Service"
-        description="Read the terms and conditions governing the use of KalmKonnect's therapy, counselling, and digital wellbeing services."
+        description="Read the terms and conditions governing the best use of KalmKonnect's therapy, counselling, and digital wellbeing services."
       />
       <motion.div
         initial="hidden"
@@ -32,7 +32,7 @@ export default function TermsOfService() {
             agree not to use the services for any unlawful purpose or in any way
             that might harm, damage, or disparage any other party. Therapy and
             counseling are professional services and require mutual respect and
-            commitment.
+            commitment for the best outcomes.
           </p>
           <h2 className="font-heading text-2xl lg:text-3xl text-brand-dark mt-8 mb-4">
             Appointments and Cancellations

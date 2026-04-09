@@ -16,9 +16,13 @@ export default function Adolescence() {
       className="px-[clamp(20px,6vw,80px)] py-24 lg:py-32 relative overflow-hidden"
     >
       {/* Diagonal split background */}
-      <div className="absolute inset-0 -z-10" style={{
-        background: "linear-gradient(135deg, var(--color-soul-cream) 50%, #F7EDE8 50%)"
-      }} />
+      <div
+        className="absolute inset-0 -z-10"
+        style={{
+          background:
+            "linear-gradient(135deg, var(--color-soul-cream) 50%, #F7EDE8 50%)",
+        }}
+      />
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
         <motion.div
@@ -63,13 +67,16 @@ export default function Adolescence() {
               <div className="flex items-center gap-2 mb-2">
                 <LeafIcon className="text-soul-sage" size={18} />
                 <h4 className="font-soul text-xl lg:text-2xl text-bg-deep">
-                  Navigating the In-Between
+                  Navigating the In-Between at Their Best
                 </h4>
                 <LeafIcon className="text-soul-sage" size={18} />
               </div>
-              <p className="text-base leading-relaxed font-science" style={{ color: "#5a5a5a" }}>
-                Providing a compassionate anchor during the turbulent years of
-                growth and discovery.
+              <p
+                className="text-base leading-relaxed font-science"
+                style={{ color: "#5a5a5a" }}
+              >
+                Providing the best compassionate anchor during the turbulent
+                years of growth and discovery.
               </p>
             </div>
           </div>
@@ -104,23 +111,41 @@ export default function Adolescence() {
           <motion.div variants={v} className="mb-6">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-soul-sage/15 text-science-teal border border-science-teal/20">
               <LeafIcon className="text-soul-sage" size={16} />
-              Evidence-based, therapy-supported
+              Evidence-based, best-practice therapy support
             </span>
           </motion.div>
 
           {/* Bullet points with 🌸 markers */}
           <motion.ul variants={v} className="space-y-3 mb-8">
-            <li className="flex items-start gap-3 text-base lg:text-lg font-science" style={{ color: "#4a4a4a" }}>
+            <li
+              className="flex items-start gap-3 text-base lg:text-lg font-science"
+              style={{ color: "#4a4a4a" }}
+            >
               <span className="mt-0.5">🌸</span>
-              <span>Compassionate support through academic pressure and identity exploration</span>
+              <span>
+                Compassionate support through academic pressure and identity
+                exploration for best growth
+              </span>
             </li>
-            <li className="flex items-start gap-3 text-base lg:text-lg font-science" style={{ color: "#4a4a4a" }}>
+            <li
+              className="flex items-start gap-3 text-base lg:text-lg font-science"
+              style={{ color: "#4a4a4a" }}
+            >
               <span className="mt-0.5">🌸</span>
-              <span>Building emotional intelligence and healthy coping strategies</span>
+              <span>
+                Building emotional intelligence and healthy coping strategies
+                for the best outcomes
+              </span>
             </li>
-            <li className="flex items-start gap-3 text-base lg:text-lg font-science" style={{ color: "#4a4a4a" }}>
+            <li
+              className="flex items-start gap-3 text-base lg:text-lg font-science"
+              style={{ color: "#4a4a4a" }}
+            >
               <span className="mt-0.5">🌸</span>
-              <span>Navigating digital-age challenges with mindfulness and resilience</span>
+              <span>
+                Navigating digital-age challenges with mindfulness and
+                best-practice resilience
+              </span>
             </li>
           </motion.ul>
 

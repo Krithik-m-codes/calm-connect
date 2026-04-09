@@ -14,19 +14,19 @@ const journeySteps = [
     number: "01",
     title: "Initial Consultation",
     description:
-      "A gentle first meeting to understand your needs, goals, and the challenges you're facing — no pressure, just presence.",
+      "A gentle first meeting to understand your needs, goals, and the challenges you're facing for the best possible start - no pressure, just presence.",
   },
   {
     number: "02",
     title: "Personalised Plan",
     description:
-      "Together we design a therapeutic pathway blending evidence-based methods with mindfulness tailored to your unique journey.",
+      "Together we design a best-fit therapeutic pathway blending evidence-based methods with mindfulness tailored to your unique journey.",
   },
   {
     number: "03",
     title: "Ongoing Support",
     description:
-      "Regular sessions, progress reviews, and compassionate guidance as you build resilience and rediscover balance.",
+      "Regular sessions, progress reviews, and compassionate guidance as you build resilience and rediscover your best balance.",
   },
 ];
 

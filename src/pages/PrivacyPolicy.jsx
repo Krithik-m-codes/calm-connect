@@ -7,7 +7,7 @@ export default function PrivacyPolicy() {
     <div className="pt-24 pb-20 px-[clamp(20px,6vw,80px)] min-h-[60vh] max-w-4xl mx-auto">
       <SEOHead
         title="Privacy Policy"
-        description="Learn how KalmKonnect protects your personal information and ensures confidentiality across all therapy and counselling services."
+        description="Learn how KalmKonnect protects your personal information and ensures the best confidentiality across all therapy and counselling services."
       />
       <motion.div
         initial="hidden"
@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
             Your privacy is extremely important to us. This Privacy Policy
             outlines the types of personal information we receive and collect
             when you use our website and services, as well as some of the steps
-            we take to safeguard information.
+            we take to safeguard information with best-practice care.
           </p>
           <h2 className="font-heading text-2xl lg:text-3xl text-brand-dark mt-8 mb-4">
             Information Collection
@@ -40,10 +40,11 @@ export default function PrivacyPolicy() {
           </h2>
           <p>
             Confidentiality is a cornerstone of therapy. We employ
-            industry-standard security measures to protect your personal
-            information from unauthorized access, alteration, disclosure, or
-            destruction. We do not sell, trade, or otherwise transfer your
-            personally identifiable information to outside parties.
+            industry-standard, best-practice security measures to protect your
+            personal information from unauthorized access, alteration,
+            disclosure, or destruction. We do not sell, trade, or otherwise
+            transfer your personally identifiable information to outside
+            parties.
           </p>
           <h2 className="font-heading text-2xl lg:text-3xl text-brand-dark mt-8 mb-4">
             Changes to Policy

@@ -20,7 +20,7 @@ import {
 const serviceIcons = [LotusIcon, BrainLotusIcon, ScreenLeafIcon];
 const serviceBackgrounds = [
   "rgba(122, 158, 126, 0.08)", // soft sage
-  "var(--color-soul-cream)",    // cream
+  "var(--color-soul-cream)", // cream
   "rgba(232, 196, 184, 0.15)", // blush
 ];
 const serviceIconColors = [
@@ -34,10 +34,7 @@ export default function Services() {
   const v = animate ? fadeUp : noMotion;
 
   return (
-    <section
-      id="services"
-      className="px-[clamp(20px,6vw,80px)] py-24 lg:py-32"
-    >
+    <section id="services" className="px-[clamp(20px,6vw,80px)] py-24 lg:py-32">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -57,14 +54,17 @@ export default function Services() {
               Our Services
             </span>
             <h2 className="font-soul text-4xl lg:text-6xl text-bg-deep mb-6 leading-tight">
-              A Safe Space to <br className="hidden lg:block" /> Untangle Your
-              Thoughts.
+              A Safe Space to <br className="hidden lg:block" /> Find Your Best
+              Calm.
             </h2>
 
             {/* Botanical divider flanking the subtitle */}
             <BotanicalDivider className="mb-6" />
 
-            <p className="text-lg lg:text-xl leading-relaxed max-w-xl mx-auto font-science" style={{ color: "#5a5a5a" }}>
+            <p
+              className="text-lg lg:text-xl leading-relaxed max-w-xl mx-auto font-science"
+              style={{ color: "#5a5a5a" }}
+            >
               {servicesIntro}
             </p>
           </motion.div>
@@ -77,20 +77,27 @@ export default function Services() {
           {services.map((s, index) => {
             const IconComponent = serviceIcons[index % serviceIcons.length];
             return (
-              <motion.div key={s.id} variants={v} transition={defaultTransition}>
+              <motion.div
+                key={s.id}
+                variants={v}
+                transition={defaultTransition}
+              >
                 <div
                   className={`h-full group relative overflow-hidden rounded-[2rem] p-8 transition-all duration-500 border border-soul-sage/10 ${
                     index === 1 ? "lg:-translate-y-8" : ""
                   }`}
                   style={{
-                    backgroundColor: serviceBackgrounds[index % serviceBackgrounds.length],
+                    backgroundColor:
+                      serviceBackgrounds[index % serviceBackgrounds.length],
                     filter: "drop-shadow(0 8px 24px rgba(45, 74, 53, 0.06))",
                   }}
                 >
                   {/* Icon */}
                   <div className="mb-5">
                     <IconComponent
-                      className={serviceIconColors[index % serviceIconColors.length]}
+                      className={
+                        serviceIconColors[index % serviceIconColors.length]
+                      }
                       size={36}
                     />
                   </div>
@@ -98,7 +105,10 @@ export default function Services() {
                   <h3 className="relative z-10 text-2xl lg:text-3xl font-soul mt-0 mb-4 text-bg-deep font-semibold">
                     {s.title}
                   </h3>
-                  <p className="relative z-10 text-base lg:text-lg leading-relaxed mb-8 min-h-20 font-science" style={{ color: "#5a5a5a" }}>
+                  <p
+                    className="relative z-10 text-base lg:text-lg leading-relaxed mb-8 min-h-20 font-science"
+                    style={{ color: "#5a5a5a" }}
+                  >
                     {s.description}
                   </p>
                   <ul className="relative z-10 space-y-4">

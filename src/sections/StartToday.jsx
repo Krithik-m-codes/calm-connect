@@ -32,7 +32,10 @@ export default function StartToday() {
         <div className="absolute top-10 left-10 text-soul-lotus/20 animate-float-gentle pointer-events-none">
           <LotusIcon size={80} />
         </div>
-        <div className="absolute bottom-10 right-10 text-soul-sage/20 animate-float-gentle pointer-events-none" style={{ animationDelay: "3s" }}>
+        <div
+          className="absolute bottom-10 right-10 text-soul-sage/20 animate-float-gentle pointer-events-none"
+          style={{ animationDelay: "3s" }}
+        >
           <LotusIcon size={60} />
         </div>
 
@@ -42,7 +45,7 @@ export default function StartToday() {
             transition={defaultTransition}
             className="font-soul italic text-4xl md:text-5xl lg:text-7xl text-bg-deep tracking-tight mb-6"
           >
-            Your healing journey begins with one step.
+            Your best healing journey begins with one step.
           </motion.h2>
 
           <motion.p
@@ -51,7 +54,8 @@ export default function StartToday() {
             className="text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed font-science"
             style={{ color: "#5a5a5a" }}
           >
-            Book a free 15-minute consultation — no pressure, just presence.
+            Book a free 15-minute consultation for best-fit support - no
+            pressure, just presence.
           </motion.p>
 
           <motion.div variants={v} transition={defaultTransition}>
@@ -61,7 +65,7 @@ export default function StartToday() {
               leafIcon
               className={`text-base lg:text-lg font-medium px-12 py-5 rounded-full shadow-md hover:shadow-lg transition-all duration-500 hover:-translate-y-0.5 ${animate ? "animate-pulse-soft" : ""}`}
             >
-              Book Your Session
+              Book Your Best Session
             </Button>
           </motion.div>
         </div>

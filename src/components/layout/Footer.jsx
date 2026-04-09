@@ -30,15 +30,28 @@ export default function Footer() {
       </div>
 
       {/* Tagline */}
-      <motion.div variants={v} transition={defaultTransition} className="relative z-10 text-center mb-10">
-        <p className="font-soul italic text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed" style={{ color: "var(--color-soul-cream)" }}>
-          "Healing is not just about reducing symptoms — it's about rediscovering joy, balance, and strength."
+      <motion.div
+        variants={v}
+        transition={defaultTransition}
+        className="relative z-10 text-center mb-10"
+      >
+        <p
+          className="font-soul italic text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed"
+          style={{ color: "var(--color-soul-cream)" }}
+        >
+          "Healing is not just about reducing symptoms - it's about
+          rediscovering your best joy, balance, and strength."
         </p>
       </motion.div>
 
       <div className="relative z-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 text-white/90">
         <motion.div variants={v} transition={defaultTransition}>
-          <h3 className="font-soul text-lg mt-0" style={{ color: "var(--color-soul-cream)" }}>{siteName}</h3>
+          <h3
+            className="font-soul text-lg mt-0"
+            style={{ color: "var(--color-soul-cream)" }}
+          >
+            {siteName}
+          </h3>
         </motion.div>
 
         <motion.div variants={v} transition={defaultTransition}>
@@ -79,22 +92,64 @@ export default function Footer() {
               Support
             </Link>
           </div>
-          <p className="text-xs leading-relaxed mt-2" style={{ color: "rgba(250, 246, 240, 0.5)" }}>
+          <p
+            className="text-xs leading-relaxed mt-2"
+            style={{ color: "rgba(250, 246, 240, 0.5)" }}
+          >
             The information provided shall strictly be used for the purpose of
             counselling and therapy and not otherwise.
           </p>
           <span
             className="inline-block rounded-full px-3 py-1 text-xs font-medium"
-            style={{ backgroundColor: "rgba(255,255,255,0.1)", color: "var(--color-soul-cream)" }}
+            style={{
+              backgroundColor: "rgba(255,255,255,0.1)",
+              color: "var(--color-soul-cream)",
+            }}
           >
-            DPDPA Compliant — Your Privacy is Guaranteed.
+            DPDPA Compliant - Your Best Privacy is Guaranteed.
           </span>
         </motion.div>
       </div>
 
+      <motion.div
+        variants={v}
+        transition={defaultTransition}
+        className="relative z-10 mt-8 text-center"
+      >
+        <p
+          className="text-xs uppercase tracking-[0.14em]"
+          style={{ color: "rgba(250, 246, 240, 0.55)" }}
+        >
+          Powered by
+        </p>
+        <p
+          className="mt-1 text-sm"
+          style={{ color: "rgba(250, 246, 240, 0.8)" }}
+        >
+          Ashbourne and Wells Corp.
+        </p>
+        <p className="mt-1 text-sm">
+          <a
+            href="https://abwells.ca"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4 hover:text-soul-gold transition-colors duration-500"
+            style={{ color: "var(--color-soul-cream)" }}
+          >
+            abwells.ca
+          </a>
+        </p>
+      </motion.div>
+
       {/* Gold line above copyright */}
-      <div className="relative z-10 mt-10 pt-4" style={{ borderTop: "1px solid var(--color-soul-gold)" }}>
-        <p className="text-center text-xs" style={{ color: "rgba(250, 246, 240, 0.4)" }}>
+      <div
+        className="relative z-10 mt-10 pt-4"
+        style={{ borderTop: "1px solid var(--color-soul-gold)" }}
+      >
+        <p
+          className="text-center text-xs"
+          style={{ color: "rgba(250, 246, 240, 0.4)" }}
+        >
           © {new Date().getFullYear()} {siteName}. All rights reserved.
         </p>
       </div>

@@ -1,11 +1,15 @@
 import { motion } from "framer-motion";
 import { techniquesSubtitle } from "../data/siteConfig";
-import {
-  accreditationText,
-} from "../data/qualifications";
+import { accreditationText } from "../data/qualifications";
 import SectionHeading from "../components/ui/SectionHeading";
 import { BotanicalDivider } from "../components/ui/BotanicalIcons";
-import { useMotionSafe, springPop, fadeUp, defaultTransition, noMotion } from "../utils/motion";
+import {
+  useMotionSafe,
+  springPop,
+  fadeUp,
+  defaultTransition,
+  noMotion,
+} from "../utils/motion";
 
 // Split into Science vs Soul categories
 const scienceTechniques = [
@@ -43,7 +47,7 @@ export default function Techniques() {
         }
       >
         <SectionHeading
-          title="Techniques We Use"
+          title="Best Techniques We Use"
           subtitle={techniquesSubtitle}
         />
 
@@ -54,7 +58,7 @@ export default function Techniques() {
             <div className="flex items-center gap-3 mb-5">
               <span className="text-xl">🔬</span>
               <h3 className="font-science text-lg font-semibold text-science-slate tracking-wide">
-                Evidence-Based Techniques
+                Best Evidence-Based Techniques
               </h3>
             </div>
             <div className="h-px w-full bg-science-slate/20 mb-5" />
@@ -81,7 +85,7 @@ export default function Techniques() {
             <div className="flex items-center gap-3 mb-5">
               <span className="text-xl">🌸</span>
               <h3 className="font-bridge italic text-lg font-semibold text-soul-lotus tracking-wide">
-                Soul & Integrative Work
+                Best Soul and Integrative Work
               </h3>
             </div>
             <div className="h-px w-full bg-soul-lotus/30 mb-5" />
@@ -118,8 +122,18 @@ export default function Techniques() {
             </div>
             {/* Seal icon */}
             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-soul-gold/10 border-2 border-soul-gold/30 flex items-center justify-center">
-              <svg className="w-8 h-8 text-soul-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              <svg
+                className="w-8 h-8 text-soul-gold"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                />
               </svg>
             </div>
             <p className="font-soul text-xl font-semibold text-bg-deep">

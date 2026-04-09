@@ -1,9 +1,9 @@
-export const qualificationsHeading = "Qualifications and Training";
+export const qualificationsHeading = "Best Qualifications and Training";
 export const qualificationsDescription =
-  "The credentials that ensure every service is delivered with competence and care.";
+  "The credentials that ensure every service is delivered with best-practice competence and care.";
 
 export const accreditationText =
-  "Internationally Accredited CBT and Hypnotherapist";
+  "Best-Practice Practitioner and Hypnotherapist";
 
 export const clinicalTraining = [
   "CBT",

@@ -34,7 +34,10 @@ export default function Contact() {
           <h2 className="font-soul text-[clamp(2.5rem,5vw,3.5rem)] leading-tight mb-4 text-bg-deep">
             {contactHeading}
           </h2>
-          <p className="text-base lg:text-xl leading-relaxed max-w-2xl mx-auto font-science" style={{ color: "#6b6b6b" }}>
+          <p
+            className="text-base lg:text-xl leading-relaxed max-w-2xl mx-auto font-science"
+            style={{ color: "#6b6b6b" }}
+          >
             {contactSubheading}
           </p>
         </motion.div>
@@ -60,7 +63,7 @@ export default function Contact() {
           className="mt-8 text-base lg:text-lg font-science"
           style={{ color: "#6b6b6b" }}
         >
-          Prefer email? Write to me at:{" "}
+          Prefer email? Write to me for best support at:{" "}
           <a
             href={`mailto:${email}`}
             className="underline underline-offset-4 hover:text-soul-gold transition-colors duration-500"

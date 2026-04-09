@@ -112,13 +112,20 @@ export default function Hero() {
                 borderRadius: "60% 40% 50% 70% / 50% 60% 40% 50%",
               }}
             />
-            <p className="mt-5 text-sm lg:text-base font-medium text-center font-bridge" style={{ color: "#5a5a5a" }}>
-              Safe, welcoming, and grounded.
+            <p
+              className="mt-5 text-sm lg:text-base font-medium text-center font-bridge"
+              style={{ color: "#5a5a5a" }}
+            >
+              Safe, welcoming, grounded, and built for your best care.
             </p>
           </motion.div>
           <motion.div
             variants={v}
-            transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }}
+            transition={{
+              duration: 1,
+              ease: [0.25, 0.46, 0.45, 0.94],
+              delay: 0.2,
+            }}
             className="absolute lg:bottom-12 lg:-left-12 -bottom-6 -left-2 hidden md:block w-48 lg:w-64 z-20"
           >
             {/* Blush shadow */}

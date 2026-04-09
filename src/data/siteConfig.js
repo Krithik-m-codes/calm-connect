@@ -3,20 +3,21 @@ export const siteName = "KalmKonnect";
 
 // ⚠️ Replace PHONENUMBER with actual WhatsApp number
 export const whatsappUrl = "https://wa.me/8679003334";
-export const email = "counselling.therapy@kalmkonnect.com";
+export const email = "therapy@kalmkonnect.com";
 export const phone = "+91 86790 03334";
-export const hours = "Mon - Sat · 9:00 AM - 7:00 PM";
-export const address = "Serenity Avenue, Suite 12";
+export const hours = "Mon - Sat · 10:00 AM - 5:00 PM";
+export const address = "2139, First Floor New Sunny Enclave Mohali Punjab";
 
 export const hero = {
   eyebrow: "Internationally Accredited CBT and Hypnotherapist",
-  headline: "Step into a safe space where your peace of mind matters.",
+  headline:
+    "Step into a safe space where your peace of mind gets the best care.",
   whomIHelpLabel: "Whom I Help:",
   whomIHelpBody:
-    "Support for individuals facing depression, anxiety, bipolar disorder, burnout, workplace stress, and relationship challenges—anyone asking 'Why do I feel this way?' and seeking clarity.",
+    "Support for individuals facing depression, anxiety, bipolar disorder, burnout, workplace stress, and relationship challenges, for anyone asking 'Why do I feel this way?' and seeking the best path toward clarity.",
   journeyLabel: "The Journey Together:",
   journeyBody:
-    "Through personalized therapy blending evidence-based methods (CBT, EMDR, Hypnotherapy, Family Therapy) with mindfulness and yoga practices, I help you manage symptoms, build resilience, and rediscover balance. Creative approaches like Expressive Arts Therapy make healing joyful and accessible when words aren't enough.",
+    "Through best-fit personalized therapy blending evidence-based methods (CBT, EMDR, Hypnotherapy, Family Therapy) with mindfulness and yoga practices, I help you manage symptoms, build resilience, and rediscover balance. Creative approaches like Expressive Arts Therapy make healing joyful and accessible when words aren't enough.",
 };
 
 export const heroImages = {
@@ -35,23 +36,23 @@ export const calmingImages = [
 ];
 
 export const servicesIntro =
-  "We offer trusted online support to help you care for your mind and wellbeing.";
+  "We offer trusted online support and best-practice guidance to help you care for your mind and wellbeing.";
 
 export const adolescenceIntro =
-  "Specialized care for adolescents navigating stress, identity, and emotional wellbeing—supported by the balance of Cyber-Zen Living.";
+  "Specialized, best-practice care for adolescents navigating stress, identity, and emotional wellbeing, supported by the balance of Cyber-Zen Living.";
 
 export const startTodayBody =
-  "Take the first step toward clarity, resilience, and balanced living.";
+  "Take the first step toward your best clarity, resilience, and balanced living.";
 
-export const contactHeading = "Let's Connect Online";
+export const contactHeading = "Let's Connect for Your Best Care Online";
 export const contactSubheading =
-  "Healing modern minds starts with a simple hello.";
+  "Healing modern minds starts with a simple hello and a best-fit care plan.";
 
 export const testimonialsSubtitle =
-  "What our clients have to say about their experience.";
+  "What our clients have to say about their best healing experience.";
 
 export const techniquesSubtitle =
-  "Therapeutic techniques applied and tailored to meet your unique needs.";
+  "Best-practice therapeutic techniques applied and tailored to meet your unique needs.";
 
 export const emergencyTicker =
   "EMERGENCY? CALL 14416 (Tele MANAS) — 24/7 National Mental Health Helpline. For rehab support, call KIRAN at 1800-599-0019. Free, Confidential, 13+ Languages.";

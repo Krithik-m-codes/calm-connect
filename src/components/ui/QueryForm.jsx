@@ -26,18 +26,18 @@ export default function QueryForm({ className = "" }) {
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
         <div className="lg:w-1/3 space-y-3 text-center lg:text-left">
           <h3 className="font-soul text-3xl lg:text-4xl text-bg-deep">
-            Let's Connect
+            Let's Connect for Your Best Care
           </h3>
           <p className="text-base font-science" style={{ color: "#6b6b6b" }}>
-            Take the first step towards healing. Request a free consultation
-            today.
+            Take the first step towards your best healing. Request a free
+            consultation today.
           </p>
         </div>
 
         <div className="w-full lg:w-2/3">
           {status === "success" ? (
             <div className="bg-soul-sage/15 text-bg-deep p-6 rounded-2xl text-center font-medium h-full flex items-center justify-center font-bridge">
-              Thank you! We'll be in touch soon.
+              Thank you! We'll be in touch soon with the best next steps.
             </div>
           ) : (
             <form
@@ -84,7 +84,7 @@ export default function QueryForm({ className = "" }) {
                   id="message"
                   required
                   rows={2}
-                  placeholder="How can I help you today?"
+                  placeholder="How can I best help you today?"
                   className="w-full px-5 py-4 rounded-xl border border-soul-sage/20 focus:outline-none focus:ring-2 focus:ring-soul-sage/40 transition-all duration-500 resize-none placeholder:opacity-50 font-science"
                   style={{
                     backgroundColor: "white",

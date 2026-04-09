@@ -165,7 +165,7 @@ export default function FreeResources() {
     <>
       <SEOHead
         title="Free Resources — Worksheets & Guides"
-        description="Explore free guides, PDF worksheets, and printable cards on mindful living, resilience building, and emotional intelligence from KalmKonnect."
+        description="Explore the best free guides, PDF worksheets, and printable cards on mindful living, resilience building, and emotional intelligence from KalmKonnect."
       />
       <motion.main
         initial="hidden"
@@ -186,9 +186,9 @@ export default function FreeResources() {
               Library & Worksheets
             </h1>
             <p className="text-base sm:text-lg text-brand-charcoal/80 max-w-2xl mx-auto mb-6 lg:mb-8">
-              Explore our comprehensive guides on mindful living, resilience
-              building, and emotional intelligence. Read online or download to
-              reflect at your own pace.
+              Explore our best comprehensive guides on mindful living,
+              resilience building, and emotional intelligence. Read online or
+              download to reflect at your own pace.
             </p>
 
             {/* Section Tabs */}
@@ -546,10 +546,11 @@ export default function FreeResources() {
                   onClick={(e) => e.stopPropagation()}
                 >
                   <h3 className="font-heading text-3xl text-brand-dark mb-2">
-                    Unlock your free download
+                    Unlock your best free download
                   </h3>
                   <p className="text-brand-charcoal/80 text-sm sm:text-base mb-5">
-                    Please share your contact details before downloading
+                    Please share your contact details before downloading your
+                    best-fit resource
                     {downloadTarget ? ` "${downloadTarget.title}".` : "."}
                   </p>
 

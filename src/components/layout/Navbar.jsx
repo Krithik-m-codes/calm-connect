@@ -117,7 +117,7 @@ export default function Navbar() {
           href={whatsappUrl}
           className="text-sm lg:text-base"
         >
-          Book a WhatsApp
+          Book on WhatsApp
         </Button>
       </div>
     </motion.nav>
