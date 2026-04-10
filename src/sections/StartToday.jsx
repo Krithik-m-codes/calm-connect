@@ -45,7 +45,7 @@ export default function StartToday() {
             transition={defaultTransition}
             className="font-soul italic text-4xl md:text-5xl lg:text-7xl text-bg-deep tracking-tight mb-6"
           >
-            Your best healing journey begins with one step.
+            Your healing journey begins with one step.
           </motion.h2>
 
           <motion.p
@@ -65,7 +65,7 @@ export default function StartToday() {
               leafIcon
               className={`text-base lg:text-lg font-medium px-12 py-5 rounded-full shadow-md hover:shadow-lg transition-all duration-500 hover:-translate-y-0.5 ${animate ? "animate-pulse-soft" : ""}`}
             >
-              Book Your Best Session
+              Book Your Session
             </Button>
           </motion.div>
         </div>

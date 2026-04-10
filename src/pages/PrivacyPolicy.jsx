@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
             Your privacy is extremely important to us. This Privacy Policy
             outlines the types of personal information we receive and collect
             when you use our website and services, as well as some of the steps
-            we take to safeguard information with best-practice care.
+            we take to safeguard information with Best Practice care.
           </p>
           <h2 className="font-heading text-2xl lg:text-3xl text-brand-dark mt-8 mb-4">
             Information Collection
@@ -40,7 +40,7 @@ export default function PrivacyPolicy() {
           </h2>
           <p>
             Confidentiality is a cornerstone of therapy. We employ
-            industry-standard, best-practice security measures to protect your
+            industry-standard, Best Practice security measures to protect your
             personal information from unauthorized access, alteration,
             disclosure, or destruction. We do not sell, trade, or otherwise
             transfer your personally identifiable information to outside

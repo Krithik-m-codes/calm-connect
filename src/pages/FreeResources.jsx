@@ -211,7 +211,7 @@ export default function FreeResources() {
                     : "text-brand-muted hover:text-brand-dark hover:bg-brand-sand/30"
                 }`}
               >
-                Front & Back Cards
+                Cards
               </button>
             </div>
           </motion.div>
@@ -416,7 +416,7 @@ export default function FreeResources() {
             </motion.div>
           )}
 
-          {/* Front & Back Cards Section */}
+          {/* Cards Section */}
           {activeTab === "cards" && cardList.length > 0 && (
             <motion.div
               key="cards"

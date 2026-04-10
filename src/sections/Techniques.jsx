@@ -47,8 +47,9 @@ export default function Techniques() {
         }
       >
         <SectionHeading
-          title="Best Techniques We Use"
+          title="Techniques We Use"
           subtitle={techniquesSubtitle}
+          subtitleColor="#000000"
         />
 
         {/* Two-column Science vs Soul split */}

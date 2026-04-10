@@ -105,13 +105,14 @@ export default function Adolescence() {
           <SectionHeading
             title="Adolescence Counselling"
             subtitle={adolescenceIntro}
+            subtitleColor="#000000"
           />
 
           {/* Evidence-based tag */}
           <motion.div variants={v} className="mb-6">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-soul-sage/15 text-science-teal border border-science-teal/20">
               <LeafIcon className="text-soul-sage" size={16} />
-              Evidence-based, best-practice therapy support
+              Evidence-based, Best Practice therapy support
             </span>
           </motion.div>
 
@@ -143,8 +144,8 @@ export default function Adolescence() {
             >
               <span className="mt-0.5">🌸</span>
               <span>
-                Navigating digital-age challenges with mindfulness and
-                best-practice resilience
+                Navigating digital-age challenges with mindfulness and Best
+                Practice resilience
               </span>
             </li>
           </motion.ul>

@@ -36,10 +36,10 @@ export const calmingImages = [
 ];
 
 export const servicesIntro =
-  "We offer trusted online support and best-practice guidance to help you care for your mind and wellbeing.";
+  "We offer trusted online support and Best Practice guidance to help you care for your mind and wellbeing.";
 
 export const adolescenceIntro =
-  "Specialized, best-practice care for adolescents navigating stress, identity, and emotional wellbeing, supported by the balance of Cyber-Zen Living.";
+  "Specialized, Best Practice care for adolescents navigating stress, identity, and emotional wellbeing, supported by the balance of Cyber-Zen Living.";
 
 export const startTodayBody =
   "Take the first step toward your best clarity, resilience, and balanced living.";
@@ -52,7 +52,7 @@ export const testimonialsSubtitle =
   "What our clients have to say about their best healing experience.";
 
 export const techniquesSubtitle =
-  "Best-practice therapeutic techniques applied and tailored to meet your unique needs.";
+  "Best Practice therapeutic techniques applied and tailored to meet your unique needs.";
 
 export const emergencyTicker =
   "EMERGENCY? CALL 14416 (Tele MANAS) — 24/7 National Mental Health Helpline. For rehab support, call KIRAN at 1800-599-0019. Free, Confidential, 13+ Languages.";

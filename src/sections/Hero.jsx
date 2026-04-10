@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import { hero, heroImages, whatsappUrl } from "../data/siteConfig";
+import { hero, heroImages, whatsappUrl, phone } from "../data/siteConfig";
 import Button from "../components/ui/Button";
-import QueryForm from "../components/ui/QueryForm";
 import { LotusIcon, LeafCluster } from "../components/ui/BotanicalIcons";
 import {
   useMotionSafe,
@@ -13,6 +12,7 @@ import {
 export default function Hero() {
   const animate = useMotionSafe();
   const v = animate ? fadeUp : noMotion;
+  const clinicPhoneHref = `tel:${phone.replace(/[^\d+]/g, "")}`;
 
   return (
     <section
@@ -81,7 +81,13 @@ export default function Hero() {
             >
               Book on WhatsApp
             </Button>
-            <Button variant="secondary" className="text-base py-4 px-8">
+            <Button
+              variant="secondary"
+              onClick={() => {
+                window.location.href = clinicPhoneHref;
+              }}
+              className="text-base py-4 px-8"
+            >
               Call Clinic
             </Button>
           </motion.div>
@@ -144,18 +150,6 @@ export default function Hero() {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Full-width Query Form below Hero Content */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-        variants={v}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="w-full max-w-7xl mx-auto mt-16 lg:mt-24 relative z-30"
-      >
-        <QueryForm />
-      </motion.div>
     </section>
   );
 }

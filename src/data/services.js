@@ -16,7 +16,7 @@ export const services = [
     description:
       "Deeper care for long-term healing, best-fit recovery, and personal growth.",
     bullets: [
-      "Working through trauma and difficult experiences with best-practice support",
+      "Working through trauma and difficult experiences with Best Practice support",
       "Overcoming negative thought patterns for the best outcomes",
       "Strengthening self-esteem and self-compassion",
       "Using mindfulness to support healing and balance",
@@ -26,7 +26,7 @@ export const services = [
     id: 3,
     title: "Digital Wellbeing Support",
     description:
-      "Gentle guidance to balance your online life with best-practice habits.",
+      "Gentle guidance to balance your online life with Best Practice habits.",
     bullets: [
       "Coping with digital overload in the best sustainable way",
       "Preventing screen-time burnout",

@@ -57,6 +57,20 @@ export default function Contact() {
           </Button>
         </motion.div>
 
+        <motion.div
+          variants={v}
+          transition={defaultTransition}
+          className="mt-12 bg-white/50 backdrop-blur-sm border border-soul-sage rounded-2xl p-8 max-w-2xl mx-auto shadow-sm"
+        >
+          <h3 className="text-xl font-soul text-bg-deep mb-3">
+            Visit Personally at Office
+          </h3>
+          <p className="font-science text-gray-600 leading-relaxed">
+            I offer in-person sessions at my fully-equipped office, providing a
+            safe and tranquil environment for profound healing.
+          </p>
+        </motion.div>
+
         <motion.p
           variants={v}
           transition={defaultTransition}

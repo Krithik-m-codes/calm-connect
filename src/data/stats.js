@@ -18,6 +18,6 @@ export const stats = [
     value: null,
     label: "Adolescence Care",
     description:
-      "Nursing the youth to navigate complexities of stress, test anxiety, identity crisis, parental discord, and emotional turmoil with best-practice support.",
+      "Nursing the youth to navigate complexities of stress, test anxiety, identity crisis, parental discord, and emotional turmoil with Best Practice support.",
   },
 ];
