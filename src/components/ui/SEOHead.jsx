@@ -4,7 +4,7 @@ import { useLocation } from "react-router";
 const SITE_NAME = "KalmKonnect";
 const BASE_URL = "https://kalmkonnect.com";
 const DEFAULT_DESCRIPTION =
-  "Step into a safe space where your peace of mind matters. KalmKonnect offers personalized therapy blending evidence-based methods with mindfulness — internationally accredited CBT & Hypnotherapist.";
+  "Step into a safe space where your peace of mind matters. KalmKonnect offers personalized therapy blending evidence-based methods with mindfulness - practitioner and hypnotherapist care.";
 
 /**
  * SEOHead — sets document title and meta tags per-page.

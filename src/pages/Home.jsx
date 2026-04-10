@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <SEOHead
-        title="Internationally Accredited CBT & Hypnotherapist — Online Therapy"
+        title="Practitioner & Hypnotherapist — Online Therapy"
         description="Step into a safe space where your peace of mind gets the best care. KalmKonnect offers best-fit personalized therapy blending evidence-based methods (CBT, EMDR, Hypnotherapy) with mindfulness and yoga practices for depression, anxiety, burnout, and adolescent care."
       />
       <Hero />
