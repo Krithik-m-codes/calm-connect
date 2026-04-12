@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router";
 import { motion } from "framer-motion";
-import { siteName, whatsappUrl } from "../../data/siteConfig";
-import logo from "../../assets/icons/logo.png";
-import { LotusIcon } from "../ui/BotanicalIcons";
+import { whatsappUrl } from "../../data/siteConfig";
+import logo from "../../assets/images/logo-no-bg.webp";
 import Button from "../ui/Button";
 import {
   useMotionSafe,
@@ -15,15 +14,37 @@ import {
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [currentHash, setCurrentHash] = useState(() =>
+    typeof window !== "undefined" ? window.location.hash : "",
+  );
   const animate = useMotionSafe();
   const location = useLocation();
   const isHome = location.pathname === "/";
+
+  const navLinkClass = (active) =>
+    `relative border-b-2 pb-1 transition-all duration-500 ${
+      active
+        ? "border-soul-sage font-semibold text-bg-deep"
+        : "border-transparent text-bg-deep hover:border-soul-sage"
+    }`;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (!isHome || typeof window === "undefined") {
+      setCurrentHash("");
+      return;
+    }
+
+    const syncHash = () => setCurrentHash(window.location.hash || "#expertise");
+    syncHash();
+    window.addEventListener("hashchange", syncHash);
+    return () => window.removeEventListener("hashchange", syncHash);
+  }, [isHome, location.pathname]);
 
   return (
     <motion.nav
@@ -43,14 +64,18 @@ export default function Navbar() {
       {/* Brand with lotus */}
       <Link
         to="/"
-        className="flex items-center gap-3 hover:opacity-90 transition-all duration-500"
+        className="flex items-center gap-2 sm:gap-3 hover:opacity-90 transition-all duration-500"
       >
-        <img src={logo} alt="Logo icon" className="h-12 w-12" />
-        <div>
-          <p className="font-soul text-xl leading-tight m-0 text-bg-deep font-semibold">
-            {siteName}
-          </p>
-        </div>
+        <span className="relative h-14 w-14 shrink-0 overflow-hidden sm:h-16 sm:w-16">
+          <img
+            src={logo}
+            alt="Kalm Konnect logo"
+            className="h-full w-full scale-125 object-contain"
+          />
+        </span>
+        <p className="m-0 font-science text-base font-semibold leading-none tracking-[0.08em] text-bg-deep sm:text-lg lg:text-xl">
+          Kalm Konnect
+        </p>
       </Link>
 
       {/* Mobile menu button */}
@@ -86,32 +111,47 @@ export default function Navbar() {
       >
         <a
           href={isHome ? "#expertise" : "/#expertise"}
-          className="relative border-b-2 border-transparent transition-all duration-500 hover:border-soul-sage pb-1 text-bg-deep"
-          onClick={() => setMenuOpen(false)}
+          className={navLinkClass(
+            isHome && (currentHash === "#expertise" || currentHash === ""),
+          )}
+          onClick={() => {
+            setCurrentHash("#expertise");
+            setMenuOpen(false);
+          }}
         >
           Expertise
         </a>
+        <Link
+          to="/about-me"
+          className={navLinkClass(location.pathname === "/about-me")}
+          onClick={() => setMenuOpen(false)}
+        >
+          About Me
+        </Link>
         <a
           href={isHome ? "#testimonials" : "/#testimonials"}
-          className="relative border-b-2 border-transparent transition-all duration-500 hover:border-soul-sage pb-1 text-bg-deep"
-          onClick={() => setMenuOpen(false)}
+          className={navLinkClass(isHome && currentHash === "#testimonials")}
+          onClick={() => {
+            setCurrentHash("#testimonials");
+            setMenuOpen(false);
+          }}
         >
           Stories
         </a>
         <Link
           to="/free-resources"
-          className="relative border-b-2 border-transparent transition-all duration-500 hover:border-soul-sage pb-1 text-bg-deep"
+          className={navLinkClass(location.pathname === "/free-resources")}
           onClick={() => setMenuOpen(false)}
         >
           Free Resources
         </Link>
-        <a
-          href={isHome ? "#contact" : "/#contact"}
-          className="relative border-b-2 border-transparent transition-all duration-500 hover:border-soul-sage pb-1 text-bg-deep"
+        <Link
+          to="/contact"
+          className={navLinkClass(location.pathname === "/contact")}
           onClick={() => setMenuOpen(false)}
         >
           Contact
-        </a>
+        </Link>
         <Button
           variant="whatsapp"
           href={whatsappUrl}

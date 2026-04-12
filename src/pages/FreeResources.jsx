@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router";
 import { Document, Page, pdfjs } from "react-pdf";
 import Button from "../components/ui/Button";
 import SEOHead from "../components/ui/SEOHead";
@@ -174,6 +175,13 @@ export default function FreeResources() {
         className="flex flex-col min-h-screen py-16 lg:py-20 px-[clamp(16px,5vw,72px)] bg-brand-sand/30"
       >
         <div className="max-w-6xl mx-auto w-full mt-4 lg:mt-6">
+          <Link
+            to="/"
+            className="inline-flex items-center rounded-full border border-soul-sage/35 bg-white/80 px-4 py-2 text-sm font-medium text-bg-deep transition-all duration-500 hover:-translate-y-0.5 hover:border-soul-sage mb-6"
+          >
+            View Full Homepage
+          </Link>
+
           <motion.div
             variants={v}
             transition={defaultTransition}

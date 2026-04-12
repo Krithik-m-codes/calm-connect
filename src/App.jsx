@@ -8,6 +8,8 @@ const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const Support = lazy(() => import("./pages/Support"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const FreeResources = lazy(() => import("./pages/FreeResources"));
+const AboutTherapist = lazy(() => import("./pages/AboutTherapist"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
 
 export default function App() {
   return (
@@ -25,6 +27,8 @@ export default function App() {
           <Route path="terms" element={<TermsOfService />} />
           <Route path="support" element={<Support />} />
           <Route path="free-resources" element={<FreeResources />} />
+          <Route path="about-me" element={<AboutTherapist />} />
+          <Route path="contact" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
