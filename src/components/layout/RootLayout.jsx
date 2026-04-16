@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Ticker from "../ui/Ticker";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import FloatingBookingButton from "../ui/FloatingBookingButton";
 
 export default function RootLayout() {
   const location = useLocation();
@@ -14,7 +15,10 @@ export default function RootLayout() {
   }, [location.pathname]);
 
   return (
-    <div className="relative min-h-screen flex flex-col" style={{ background: "var(--color-bg-primary)" }}>
+    <div
+      className="relative min-h-screen flex flex-col"
+      style={{ background: "var(--color-bg-primary)" }}
+    >
       <Ticker />
       <Navbar />
 
@@ -34,6 +38,7 @@ export default function RootLayout() {
       </main>
 
       <Footer />
+      <FloatingBookingButton />
     </div>
   );
 }
