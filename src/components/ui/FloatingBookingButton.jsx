@@ -51,7 +51,26 @@ const Sparkles = () => {
 
 export default function FloatingBookingButton() {
   const [isHovered, setIsHovered] = useState(false);
-  const calendlyUrl = import.meta.env.VITE_CALENDLY_URL;
+  const defaultCalendlyUrl = "https://calendly.com/therapist-kalmkonnect/30min";
+
+  const resolveCalendlyUrl = () => {
+    const rawUrl = import.meta.env.VITE_CALENDLY_URL;
+
+    if (!rawUrl || typeof rawUrl !== "string") {
+      return defaultCalendlyUrl;
+    }
+
+    const cleaned = rawUrl.trim().replace(/^['\"]|['\"]$/g, "");
+
+    // Prevent rendering own-site or invalid URLs in popup iframe.
+    if (!cleaned.startsWith("https://calendly.com/")) {
+      return defaultCalendlyUrl;
+    }
+
+    return cleaned;
+  };
+
+  const calendlyUrl = resolveCalendlyUrl();
 
   const handleClick = (e) => {
     e.preventDefault();
