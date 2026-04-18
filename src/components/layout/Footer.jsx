@@ -1,5 +1,14 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router";
+import {
+  Mail,
+  Phone,
+  Clock3,
+  MapPin,
+  ShieldCheck,
+  FileText,
+  LifeBuoy,
+} from "lucide-react";
 import { siteName, email, phone, hours, address } from "../../data/siteConfig";
 import { LotusWatermark } from "../ui/BotanicalIcons";
 import {
@@ -54,14 +63,34 @@ export default function Footer() {
           </h3>
         </motion.div>
 
-        <motion.div variants={v} transition={defaultTransition}>
-          <p className="text-sm opacity-80">{email}</p>
-          <p className="text-sm opacity-80">{phone}</p>
+        <motion.div
+          variants={v}
+          transition={defaultTransition}
+          className="flex flex-col gap-3"
+        >
+          <p className="text-sm opacity-80 flex items-center gap-2 transition-all duration-500 hover:opacity-100 hover:translate-x-0.5">
+            <Mail size={15} aria-hidden="true" />
+            {email}
+          </p>
+          <p className="text-sm opacity-80 flex items-center gap-2 transition-all duration-500 hover:opacity-100 hover:translate-x-0.5">
+            <Phone size={15} aria-hidden="true" />
+            {phone}
+          </p>
         </motion.div>
 
-        <motion.div variants={v} transition={defaultTransition}>
-          <p className="text-sm opacity-80">{hours}</p>
-          <p className="text-sm opacity-80">{address}</p>
+        <motion.div
+          variants={v}
+          transition={defaultTransition}
+          className="flex flex-col gap-3"
+        >
+          <p className="text-sm opacity-80 flex items-center gap-2 transition-all duration-500 hover:opacity-100 hover:translate-x-0.5">
+            <Clock3 size={15} aria-hidden="true" />
+            {hours}
+          </p>
+          <p className="text-sm opacity-80 flex items-start gap-2 transition-all duration-500 hover:opacity-100 hover:translate-x-0.5">
+            <MapPin size={15} aria-hidden="true" className="mt-0.5 shrink-0" />
+            <span>{address}</span>
+          </p>
         </motion.div>
 
         <motion.div
@@ -69,26 +98,29 @@ export default function Footer() {
           transition={defaultTransition}
           className="space-y-3 flex flex-col items-start"
         >
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             <Link
               to="/privacy"
-              className="text-sm underline underline-offset-2 transition-colors duration-500 hover:text-soul-gold"
+              className="inline-flex items-center gap-1 text-sm underline underline-offset-2 transition-all duration-500 hover:text-soul-gold hover:-translate-y-0.5"
               style={{ color: "var(--color-soul-cream)" }}
             >
+              <ShieldCheck size={14} aria-hidden="true" />
               Privacy
             </Link>
             <Link
               to="/terms"
-              className="text-sm underline underline-offset-2 transition-colors duration-500 hover:text-soul-gold"
+              className="inline-flex items-center gap-1 text-sm underline underline-offset-2 transition-all duration-500 hover:text-soul-gold hover:-translate-y-0.5"
               style={{ color: "var(--color-soul-cream)" }}
             >
+              <FileText size={14} aria-hidden="true" />
               Terms
             </Link>
             <Link
               to="/support"
-              className="text-sm underline underline-offset-2 transition-colors duration-500 hover:text-soul-gold"
+              className="inline-flex items-center gap-1 text-sm underline underline-offset-2 transition-all duration-500 hover:text-soul-gold hover:-translate-y-0.5"
               style={{ color: "var(--color-soul-cream)" }}
             >
+              <LifeBuoy size={14} aria-hidden="true" />
               Support
             </Link>
           </div>

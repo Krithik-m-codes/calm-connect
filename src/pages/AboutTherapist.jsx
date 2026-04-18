@@ -147,7 +147,7 @@ export default function AboutTherapist() {
                 href={`mailto:${email}`}
                 className="text-sm"
               >
-                Email {email}
+                 {email}
               </Button>
               <Button
                 variant="ghost"

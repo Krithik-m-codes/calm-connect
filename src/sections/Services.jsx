@@ -20,7 +20,7 @@ import {
 const serviceIcons = [LotusIcon, BrainLotusIcon, ScreenLeafIcon];
 const serviceBackgrounds = [
   "rgba(122, 158, 126, 0.08)", // soft sage
-  "var(--color-soul-cream)", // cream
+  "rgba(255, 255, 255, 0.7)", // soft white
   "rgba(232, 196, 184, 0.15)", // blush
 ];
 const serviceIconColors = [

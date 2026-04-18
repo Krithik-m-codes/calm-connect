@@ -10,9 +10,32 @@ export default function RootLayout() {
   const location = useLocation();
 
   useEffect(() => {
-    // Scroll to top on route change
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
+    const hash = location.hash;
+
+    if (!hash) {
+      window.scrollTo(0, 0);
+      return;
+    }
+
+    const targetId = hash.replace("#", "");
+    let retries = 0;
+
+    // Retry briefly so hash navigation still works while lazy sections mount.
+    const scrollToHash = () => {
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+
+      if (retries < 12) {
+        retries += 1;
+        window.setTimeout(scrollToHash, 80);
+      }
+    };
+
+    scrollToHash();
+  }, [location.pathname, location.hash]);
 
   return (
     <div

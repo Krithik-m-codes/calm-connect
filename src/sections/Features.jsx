@@ -16,7 +16,12 @@ import {
 } from "../utils/motion";
 
 const botanicalIcons = [LotusIcon, LeafIcon, WaveIcon, FlameIcon];
-const cardBackgrounds = ["#FAF6F0", "#F7EDE8", "#FAF6F0", "#F7EDE8"];
+const cardBackgrounds = [
+  "rgba(255, 255, 255, 0.7)",
+  "#F7EDE8",
+  "rgba(255, 255, 255, 0.7)",
+  "#F7EDE8",
+];
 const iconColors = [
   "text-soul-lotus",
   "text-soul-sage",
@@ -50,9 +55,10 @@ export default function Features() {
               key={f.id}
               variants={v}
               transition={defaultTransition}
-              className="group relative flex flex-col justify-between rounded-[2rem] p-8 border border-transparent shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-1 overflow-hidden"
+              className="group relative flex flex-col justify-between rounded-4xl p-8 border border-transparent shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-1 overflow-hidden"
               style={{
-                backgroundColor: cardBackgrounds[index % cardBackgrounds.length],
+                backgroundColor:
+                  cardBackgrounds[index % cardBackgrounds.length],
                 borderLeftColor: "transparent",
               }}
               onMouseEnter={(e) => {
@@ -65,7 +71,7 @@ export default function Features() {
               }}
             >
               {/* Botanical watercolor icon */}
-              <div className="mb-4">
+              <div className="mb-4 transition-transform duration-500 group-hover:scale-105">
                 <IconComponent
                   className={iconColors[index % iconColors.length]}
                   size={36}
@@ -73,17 +79,20 @@ export default function Features() {
               </div>
 
               <div className="relative z-10 flex-1">
-                <h4 className="font-display text-xl font-semibold mb-3 text-science-slate tracking-tight leading-snug">
+                <h4 className="font-display text-xl font-semibold mb-3 text-science-slate tracking-tight leading-snug transition-colors duration-500 group-hover:text-bg-deep">
                   {f.title}
                 </h4>
-                <p className="text-base leading-relaxed font-science" style={{ color: "#6b6b6b" }}>
+                <p
+                  className="text-base leading-relaxed font-science"
+                  style={{ color: "#6b6b6b" }}
+                >
                   {f.description}
                 </p>
               </div>
 
               {/* Evidence badge */}
               <div className="mt-6">
-                <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-science-teal/40 text-xs font-medium text-science-teal bg-white/60">
+                <span className="inline-flex items-center px-3 py-1.5 rounded-full border border-science-teal/40 text-xs font-medium text-science-teal bg-white/60 transition-all duration-500 group-hover:bg-white/85 group-hover:border-science-teal/55">
                   {evidenceBadges[index % evidenceBadges.length]}
                 </span>
               </div>

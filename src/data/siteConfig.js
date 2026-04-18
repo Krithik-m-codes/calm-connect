@@ -2,7 +2,7 @@
 export const siteName = "KalmKonnect";
 
 // ⚠️ Replace PHONENUMBER with actual WhatsApp number
-export const whatsappUrl = "https://wa.me/8679003334";
+export const whatsappUrl = "https://wa.me/+918679003334";
 export const email = "therapy@kalmkonnect.com";
 export const phone = "+91 86790 03334";
 export const hours = "Mon - Sat · 10:00 AM - 5:00 PM";

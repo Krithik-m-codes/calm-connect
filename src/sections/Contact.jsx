@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Mail } from "lucide-react";
 import {
   contactHeading,
   contactSubheading,
@@ -74,9 +75,10 @@ export default function Contact() {
         <motion.p
           variants={v}
           transition={defaultTransition}
-          className="mt-8 text-base lg:text-lg font-science"
+          className="mt-8 text-base lg:text-lg font-science inline-flex items-center gap-2"
           style={{ color: "#6b6b6b" }}
         >
+          <Mail size={18} aria-hidden="true" />
           Prefer email? Write to me for best support at:{" "}
           <a
             href={`mailto:${email}`}

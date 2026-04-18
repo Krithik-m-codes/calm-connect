@@ -1,6 +1,15 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { motion } from "framer-motion";
+import {
+  Sparkles,
+  UserRound,
+  MessageCircle,
+  BookOpen,
+  Mail,
+  Menu,
+  X,
+} from "lucide-react";
 import { whatsappUrl } from "../../data/siteConfig";
 import logo from "../../assets/images/logo-no-bg.webp";
 import Button from "../ui/Button";
@@ -19,14 +28,34 @@ export default function Navbar() {
   );
   const animate = useMotionSafe();
   const location = useLocation();
+  const navigate = useNavigate();
   const isHome = location.pathname === "/";
 
   const navLinkClass = (active) =>
-    `relative border-b-2 pb-1 transition-all duration-500 ${
+    `relative inline-flex items-center gap-2 border-b-2 pb-1 transition-all duration-500 ${
       active
         ? "border-soul-sage font-semibold text-bg-deep"
         : "border-transparent text-bg-deep hover:border-soul-sage"
     }`;
+
+  const handleSectionNavigation = (hash) => {
+    setCurrentHash(hash);
+    setMenuOpen(false);
+
+    if (!isHome) {
+      navigate({ pathname: "/", hash });
+      return;
+    }
+
+    const target = document.querySelector(hash);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", hash);
+      return;
+    }
+
+    window.location.hash = hash;
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -85,20 +114,7 @@ export default function Navbar() {
         aria-label={menuOpen ? "Close menu" : "Open menu"}
         aria-expanded={menuOpen}
       >
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-        >
-          {menuOpen ? (
-            <path d="M6 6l12 12M6 18L18 6" />
-          ) : (
-            <path d="M3 12h18M3 6h18M3 18h18" />
-          )}
-        </svg>
+        {menuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
       {/* Nav links */}
@@ -109,40 +125,44 @@ export default function Navbar() {
             : "hidden lg:flex"
         }`}
       >
-        <a
-          href={isHome ? "#expertise" : "/#expertise"}
+        <Link
+          to={{ pathname: "/", hash: "#expertise" }}
           className={navLinkClass(
             isHome && (currentHash === "#expertise" || currentHash === ""),
           )}
-          onClick={() => {
-            setCurrentHash("#expertise");
-            setMenuOpen(false);
+          onClick={(e) => {
+            e.preventDefault();
+            handleSectionNavigation("#expertise");
           }}
         >
+          <Sparkles size={16} aria-hidden="true" />
           Expertise
-        </a>
+        </Link>
         <Link
           to="/about-me"
           className={navLinkClass(location.pathname === "/about-me")}
           onClick={() => setMenuOpen(false)}
         >
+          <UserRound size={16} aria-hidden="true" />
           About Me
         </Link>
-        <a
-          href={isHome ? "#testimonials" : "/#testimonials"}
+        <Link
+          to={{ pathname: "/", hash: "#testimonials" }}
           className={navLinkClass(isHome && currentHash === "#testimonials")}
-          onClick={() => {
-            setCurrentHash("#testimonials");
-            setMenuOpen(false);
+          onClick={(e) => {
+            e.preventDefault();
+            handleSectionNavigation("#testimonials");
           }}
         >
+          <MessageCircle size={16} aria-hidden="true" />
           Stories
-        </a>
+        </Link>
         <Link
           to="/free-resources"
           className={navLinkClass(location.pathname === "/free-resources")}
           onClick={() => setMenuOpen(false)}
         >
+          <BookOpen size={16} aria-hidden="true" />
           Free Resources
         </Link>
         <Link
@@ -150,6 +170,7 @@ export default function Navbar() {
           className={navLinkClass(location.pathname === "/contact")}
           onClick={() => setMenuOpen(false)}
         >
+          <Mail size={16} aria-hidden="true" />
           Contact
         </Link>
         <Button
