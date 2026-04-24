@@ -8,6 +8,7 @@ import {
   phone,
   hours,
   address,
+  pincode,
 } from "../data/siteConfig";
 import { BotanicalDivider } from "../components/ui/BotanicalIcons";
 import Button from "../components/ui/Button";
@@ -146,6 +147,7 @@ export default function Contact() {
                     Visit In Person
                   </span>
                   <span className="font-bridge text-bg-deep">{address}</span>
+                  <span className="font-bridge text-bg-deep">{pincode}</span>
                   <span className="mt-1 font-science text-sm text-bg-deep/60">
                     A safe, fully-equipped office for tranquil, in-person
                     healing.

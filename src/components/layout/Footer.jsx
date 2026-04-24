@@ -9,7 +9,14 @@ import {
   FileText,
   LifeBuoy,
 } from "lucide-react";
-import { siteName, email, phone, hours, address } from "../../data/siteConfig";
+import {
+  siteName,
+  email,
+  phone,
+  hours,
+  address,
+  pincode,
+} from "../../data/siteConfig";
 import { LotusWatermark } from "../ui/BotanicalIcons";
 import {
   useMotionSafe,
@@ -89,7 +96,10 @@ export default function Footer() {
           </p>
           <p className="text-sm opacity-80 flex items-start gap-2 transition-all duration-500 hover:opacity-100 hover:translate-x-0.5">
             <MapPin size={15} aria-hidden="true" className="mt-0.5 shrink-0" />
-            <span>{address}</span>
+            <span className="flex flex-col">
+              <span>{address}</span>
+              <span>{pincode}</span>
+            </span>
           </p>
         </motion.div>
 

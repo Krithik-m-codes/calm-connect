@@ -1,12 +1,14 @@
 // Site-wide configuration — brand name, contact info, hero copy, section copy
 export const siteName = "KalmKonnect";
 
-// ⚠️ Replace PHONENUMBER with actual WhatsApp number
+// ⚠️ Replace PHONE NUMBER with actual WhatsApp number
 export const whatsappUrl = "https://wa.me/+918679003334";
 export const email = "therapy@kalmkonnect.com";
 export const phone = "+91 86790 03334";
 export const hours = "Mon - Sat · 10:00 AM - 5:00 PM";
-export const address = "2139, First Floor New Sunny Enclave Mohali Punjab";
+export const address = "2732, First Floor New Sunny Enclave Mohali Punjab";
+
+export const pincode = "140301";
 
 export const hero = {
   eyebrow: "Internationally Accredited CBT and Hypnotherapist",
