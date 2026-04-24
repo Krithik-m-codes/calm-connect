@@ -41,6 +41,8 @@
   --animate-pulse-soft: pulse-soft 2.5s ease-in-out infinite;
   --animate-float-gentle: floatGentle 6s ease-in-out infinite;
   --animate-bloom-in: bloomIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  --animate-shine-border: shineBorder 5s linear infinite;
+  --animate-shimmer-sweep: shimmerSweep 2.4s ease-in-out infinite;
 }
 
 /* ─── Keyframes ─── */
@@ -99,6 +101,30 @@
   to {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@keyframes shineBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(-120%);
+  }
+
+  100% {
+    transform: translateX(220%);
   }
 }
 
