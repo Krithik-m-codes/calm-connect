@@ -31,8 +31,8 @@ export default function AboutTherapist() {
   return (
     <div className="pt-24 pb-20 px-[clamp(20px,6vw,80px)]">
       <SEOHead
-        title="About Me — Rupinder Kaur"
-        description="Meet Rupinder Kaur, an internationally accredited CBT practitioner and hypnotherapist at KalmKonnect. Learn about her therapeutic approach, training, and areas of support."
+        title="About Me — Rupinder Kaur Sangar"
+        description="Meet Rupinder Kaur Sangar, an internationally accredited CBT practitioner and hypnotherapist at KalmKonnect. Learn about her therapeutic approach, training, and areas of support."
       />
 
       <div className="mx-auto mb-6 max-w-6xl">
@@ -78,7 +78,7 @@ export default function AboutTherapist() {
                 <div className="rounded-full bg-white p-1.5">
                   <img
                     src={profilePicture}
-                    alt="Rupinder Kaur, internationally accredited CBT practitioner and hypnotherapist"
+                    alt="Rupinder Kaur Sangar, internationally accredited CBT practitioner and hypnotherapist"
                     className="h-40 w-40 rounded-full object-cover object-center sm:h-44 sm:w-44"
                   />
                 </div>
@@ -101,7 +101,7 @@ export default function AboutTherapist() {
             </span>
 
             <h1 className="mt-4 font-soul text-3xl text-bg-deep">
-              Rupinder Kaur
+              Rupinder Kaur Sangar
             </h1>
             <p className="mt-2 max-w-[18rem] text-sm leading-relaxed text-science-slate font-science">
               {accreditationText}
@@ -152,7 +152,7 @@ export default function AboutTherapist() {
             About Me
           </p>
           <h2 className="mt-2 font-soul text-4xl leading-tight text-bg-deep sm:text-5xl">
-            Hi, I am Rupinder Kaur
+            Hi, I am Rupinder Kaur Sangar
           </h2>
 
           <div className="mt-5">

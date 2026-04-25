@@ -10,6 +10,4 @@
   <rect width="800" height="1000" fill="url(#bg)" rx="44" />
   <circle cx="400" cy="340" r="130" fill="#7a9e7e" opacity="0.25" />
   <rect x="235" y="500" width="330" height="230" rx="115" fill="#7a9e7e" opacity="0.25" />
-  <text x="400" y="820" text-anchor="middle" fill="#2d4a35" font-family="DM Sans, Arial, sans-serif" font-size="34" font-weight="700">Replace With</text>
-  <text x="400" y="866" text-anchor="middle" fill="#2d4a35" font-family="DM Sans, Arial, sans-serif" font-size="34" font-weight="700">Rupinder Kaur Photo</text>
 </svg>

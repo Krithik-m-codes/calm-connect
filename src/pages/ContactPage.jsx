@@ -8,7 +8,7 @@ export default function ContactPage() {
     <>
       <SEOHead
         title="Contact"
-        description="Get in touch with KalmKonnect for counselling and therapy sessions with Rupinder Kaur. Reach out on WhatsApp, email, or call to book your session."
+        description="Get in touch with KalmKonnect for counselling and therapy sessions with Rupinder Kaur Sangar. Reach out on WhatsApp, email, or call to book your session."
       />
       <div className="px-[clamp(20px,6vw,80px)] pt-8">
         <div className="mx-auto max-w-6xl">
