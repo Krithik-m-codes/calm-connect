@@ -11,7 +11,7 @@ import {
 import SEOHead from "../components/ui/SEOHead";
 import Button from "../components/ui/Button";
 // import profilePicture from "../assets/images/author/profile-picture.png";
-import profilePicture from "../assets/images/therapist-placeholder.svg";
+import profilePicture from "../assets/images/author/avatar.jpeg";
 import { hero, whatsappUrl, email, phone } from "../data/siteConfig";
 import { accreditationText, clinicalTraining } from "../data/qualifications";
 import { techniques } from "../data/techniques";
