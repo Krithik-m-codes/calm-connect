@@ -51,7 +51,7 @@ const Sparkles = () => {
 
 export default function FloatingBookingButton() {
   const [isHovered, setIsHovered] = useState(false);
-  const defaultCalendlyUrl = "https://calendly.com/therapist-kalmkonnect/30min";
+  const defaultCalendlyUrl = "https://calendly.com/therapist-kalmkonnect/45min";
 
   const resolveCalendlyUrl = () => {
     const rawUrl = import.meta.env.VITE_CALENDLY_URL;
